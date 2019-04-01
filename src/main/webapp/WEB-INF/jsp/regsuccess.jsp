@@ -1,5 +1,3 @@
-
-
 <!Doctype html>
 <html>
 <style>
@@ -16,17 +14,17 @@ body {
 .container {
 	font-family: Roboto, sans-serif;
 	background-image:
-		/* url(https://image.freepik.com/free-vector/dark-blue-blurred-background_1034-589.jpg); */
-	
+		url(https://image.freepik.com/free-vector/dark-blue-blurred-background_1034-589.jpg);
+		/* ropes.jfif; */
 	border-style: 1px solid grey;
 	margin: 0 auto;
 	text-align: center;
 	opacity: 0.8;
 	margin-top: 67px;
-	/* box-shadow: 2px 5px 5px 0px #eee; */
+	box-shadow: 2px 5px 5px 0px #eee;
 	max-width: 500px;
 	padding-top: 10px;
-	height: 250px;
+	height: 300px;
 	margin-top: 166px;
 }
 
@@ -104,7 +102,8 @@ body {
 <body>
 	<div class="container">
 		<!---heading---->
-		<header class="heading"> Login To Your Gym </header>
+		<header class="heading"> Register Success! Now Login To Your Gym </header>
+		
 		<hr></hr>
 		<!---Form starting---->
 		<div class="row ">

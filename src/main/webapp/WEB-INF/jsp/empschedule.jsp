@@ -1,37 +1,33 @@
-
-
 <!Doctype html>
 <html>
 <style>
 body {
-	background-image:
-		/* url(https://s3.envato.com/files/243754334/primag.jpg); */
-		url("images/gym2.jpg");
+	background-image: url("images/gym2.jpg"); /* url(https://s3.envato.com/files/243754334/primag.jpg); */
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
 	height: 100vh;
 	overflow: auto;
-	background-repeat: no-repeat;
 }
 
 /*-----for border----*/
 .container {
 	font-family: Roboto, sans-serif;
 	background-image:
-		/* url(https://image.freepik.com/free-vector/dark-blue-blurred-background_1034-589.jpg); */
-	/* "images/ropes.jfif";  */
+		url("images/light-grey-background.jpg");
+		
 	border-style: 1px solid grey;
 	margin: 0 auto;
 	text-align: center;
 	opacity: 0.8;
 	margin-top: 67px;
-	/* box-shadow: 2px 5px 5px 0px #eee; */
-	max-width: 500px;
+	box-shadow: 2px 5px 5px 0px #eee;
+	max-width: 550px;
 	padding-top: 10px;
-	height: 200px;
+	height: 425px;
 	margin-top: 166px;
 }
+
 
 /*---for heading-----*/
 .heading {
@@ -42,6 +38,17 @@ body {
 	font-weight: bold;
 	padding-top: 10px;
 }
+
+.pass {
+	color: white;
+	margin-top: 9px;
+	font-size: 14px;
+	font-family: sans-serif;
+	/* margin-left: 6px; */
+	
+}
+
+
 
 /*------------For submit button---------*/
 .sbutton {
@@ -56,8 +63,8 @@ body {
 }
 
 .btn.btn-warning:hover {
-	box-shadow: 2px 1px 2px 3px #99ccff;
-	background: #5900a6;
+	box-shadow: 2px 1px 2px 3px #808080;
+	background: #000000;
 	color: #fff;
 	transition: background-color 1.15s ease-in-out, border-color 1.15s
 		ease-in-out, box-shadow 1.15s ease-in-out;
@@ -72,19 +79,35 @@ body {
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <meta charset="UTF-8">
-<title>Registration Form</title>
+<title>Successful Login</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+
+<div role="navigation">
+		<div class="navbar navbar-inverse">
+		<a href="/welcome" class="navbar-brand">Your schedule page </a>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/addClass">Create a Gym Class</a></li>
+				
+				</ul>
+			</div>
+		</div>
+		</div>
+		
 	<div class="container">
 		<!---heading---->
-		<header class="heading"> Unsuccessful Login</header>
+		<header class="heading"> Welcome ${sessionScope.member.name} to your Work Schedule Page  </header>
+		<hr></hr>
 		
-		&nbsp 
-		<a href="/regsuccess"
-			style="font-family: Roboto, sans-serif; color: black; font-size: 25px; font-weight: bold;">Please Go
-			Back and Try Again</a>
+	
+			</div>
+			
+			<form form class="form-horizontal" method="post" action="logoutMember">
+				<input type="submit" class="btn btn-warning" value="Logout" name="logoutMember" />
+				</form>
+			
 
-	</div>
 </body>
 </html>

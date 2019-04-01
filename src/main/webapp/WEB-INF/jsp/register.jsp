@@ -1,151 +1,3 @@
-<!--
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Gym Register Page</title>
-</head>
-<body>
-	<h1>Registration</h1>
-	<div align="center">
-		<form class="form-horizontal" method="POST" action="addMember">
-			<input type="hidden" name="Id" value="${member.Id}">
-			<div class="form-group">
-				<label class="control-label col-md-3">Name</label>
-				<div class="col-md-7">
-					<input type="text" class="form-control" name="name"
-						value="${member.name}" />
-				</div>
-			</div>
-
-			<div class="form-group">
-				<label class="control-label col-md-3">Email</label>
-				<div class="col-md-7">
-					<input type="text" class="form-control" name="email"
-						value="${member.email}" />
-				</div>
-			</div>
-			<div class="form-group">
-				<label class="control-label col-md-3">Phone Number</label>
-				<div class="col-md-7">
-					<input type="text" class="form-control" name="phoneNum"
-						value="${member.phoneNum}" />
-				</div>
-			</div>
-			<div class="form-group">
-				<label class="control-label col-md-3">Password</label>
-				<div class="col-md-7">
-					<input type="password" class="form-control" name="password"
-						value="${member.password}" />
-				</div>
-			</div>
-			<div class="form-group">
-				<input type="submit" class="btn btn-primary" value="register" />
-			</div>
-	</div>
-	</form>
-
-</body>
-</html>-->
-
-
-
-
-<!--  <!DOCTYPE html>
-<html>
-<style>
-.colorgraph {
-	height: 5px;
-	border-top: 0;
-	background: #c4e17f;
-	border-radius: 5px;
-	background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%,
-		#f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%,
-		#db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%,
-		#669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-	background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%,
-		#f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%,
-		#db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%,
-		#669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-	background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca
-		25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe
-		50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1
-		87.5%, #62c2e4 87.5%, #62c2e4);
-	background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca
-		25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe
-		50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1
-		87.5%, #62c2e4 87.5%, #62c2e4);
-}
-</style>
-<head>
-<title>Gym Register Page</title>
-<link
-	href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
-	rel="stylesheet" id="bootstrap-css">
-<script
-	src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<meta charset="ISO-8859-1">
-<title>Gym Login Page</title>
-</head>
-<div class="container">
-
-	<div class="row" style="margin-top: 20px">
-		<div
-			class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-			<form role="form">
-				<fieldset>
-					<h1>Registration</h1>
-					<hr class="colorgraph">
-					<div class="form-group">
-						<form class="form-horizontal" method="POST" action="addMember">
-							<input type="hidden" name="Id" value="${member.Id}"> <label
-								class="control-label col-md-3"> Enter Name</label>
-							<div class="col-md-7">
-								<input type="text" class="form-control" name="name"
-									value="${member.name}" />
-							</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">Email</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="email"
-								value="${member.email}" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">Phone Number</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="phoneNum"
-								value="${member.phoneNum}" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">Password</label>
-						<div class="col-md-7">
-							<input type="password" class="form-control" name="password"
-								value="${member.password}" />
-						</div>
-					</div>
-					<hr class="colorgraph">
-					<div class="row">
-						<div class="col-xs-6 col-sm-6 col-md-6">
-							<input type="submit" class="btn btn-primary" value="Register" />
-						</div>
-
-					</div>
-				</fieldset>
-			</form>
-		</div>
-	</div>
-
-</div>
-</html>-->
-
-
-
-
-<!------ Include the above in your HEAD tag ---------->
 
 <!Doctype html>
 <html>
@@ -163,14 +15,14 @@ body {
 .container {
 	font-family: Roboto, sans-serif;
 	background-image:
-		url(https://image.freepik.com/free-vector/dark-blue-blurred-background_1034-589.jpg);
-		/* ropes.jfif; */
+		/* url(https://image.freepik.com/free-vector/dark-blue-blurred-background_1034-589.jpg); */
+		
 	border-style: 1px solid grey;
 	margin: 0 auto;
 	text-align: center;
 	opacity: 0.8;
 	margin-top: 67px;
-	box-shadow: 2px 5px 5px 0px #eee;
+	/* box-shadow: 2px 5px 5px 0px #eee; */
 	max-width: 500px;
 	padding-top: 10px;
 	height: 425px;
@@ -274,8 +126,8 @@ body {
 }
 
 .btn.btn-warning:hover {
-	box-shadow: 2px 1px 2px 3px #99ccff;
-	background: #5900a6;
+	box-shadow: 2px 1px 2px 3px #808080;
+	background: #000000;
 	color: #fff;
 	transition: background-color 1.15s ease-in-out, border-color 1.15s
 		ease-in-out, box-shadow 1.15s ease-in-out;

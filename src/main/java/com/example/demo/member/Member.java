@@ -1,30 +1,62 @@
 package com.example.demo.member;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Member {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
+	private int Memberid;
 	private String name;
 	private String email;
 	private String phoneNum;
 	private String password;
 	
+	@ManyToMany(cascade = CascadeType.ALL)
+	private Set<ClassDetails> booking = new HashSet<>();
+	
+	
+	public Set<ClassDetails> getBooking() {
+		return booking;
+	}
+
+	public void setBooking(Set<ClassDetails> booking) {
+		this.booking = booking;
+	}
+	
+	@OneToMany
+	private Set<foodDiary> diary = new HashSet<>();
+	
+	public Set<foodDiary> getDiary() {
+		return diary;
+	}
+
+
+	public void setDiary(Set<foodDiary> diary) {
+		this.diary = diary;
+	}
+
+
 	public Member()
 	{
 		
 	}
 	
 	
-	public Member(int id, String name, String email, String phoneNum, String password) {
+	public Member(int Memberid, String name, String email, String phoneNum, String password) {
 		
-		this.id = id;
+		this.Memberid = Memberid;
 		this.name = name;
 		this.email = email;
 		this.phoneNum = phoneNum;
@@ -32,14 +64,14 @@ public class Member {
 	}
 
 	
-	public int getId() {
-		return id;
+	public int getMemberid() {
+		return Memberid;
 	}
 
 
 
-	public void setId(int id) {
-		this.id = id;
+	public void setMemberid(int Memberid) {
+		this.Memberid = Memberid;
 	}
 
 

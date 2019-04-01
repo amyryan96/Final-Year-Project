@@ -21,9 +21,9 @@ public class MemberController {
 		return memSer.getAllMembers();
 	}
 	
-	@RequestMapping("/members/{Id}")
-		public Member getMemberById(@PathVariable("Id") int Id) {
-			return memSer.getById(Id);
+	@RequestMapping("/members/{Memberid}")
+		public Member getMemberByMemberid(@PathVariable("Memberid") int Memberid) {
+			return memSer.getByMemberid(Memberid);
 		}
 
 
@@ -33,17 +33,19 @@ public class MemberController {
 		memSer.addMember(mem);
 	}
 	
-	@RequestMapping(method=RequestMethod.PUT, value="/member/{Id}")
-	public void updateMember(@RequestBody Member mem, @PathVariable("Id") int Id)
+	@RequestMapping(method=RequestMethod.PUT, value="/member/{Memberid}")
+	public void updateMember(@RequestBody Member mem, @PathVariable("Memberid") int Memberid)
 	{
-		memSer.upadteMember(Id, mem);
+		memSer.upadteMember(Memberid, mem);
 	}
 	
-	@RequestMapping(method=RequestMethod.DELETE, value="/member/{Id}")
-	public void deleteMember(@PathVariable("Id") int Id)
+	@RequestMapping(method=RequestMethod.DELETE, value="/member/{Memberid}")
+	public void deleteMember(@PathVariable("Memberid") int Memberid)
 	{
-		memSer.deleteMember(Id);
+		memSer.deleteMember(Memberid);
 	}
+	
+	
 	
 	
 	

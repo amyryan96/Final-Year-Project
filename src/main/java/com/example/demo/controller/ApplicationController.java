@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,13 +34,15 @@ public class ApplicationController {
 	@PostMapping("/addMember")
 	public String registerMember(@ModelAttribute Member mem, BindingResult bindingresult, HttpServletRequest request)
 	{
+		
 		memberSer.addMember(mem);
-		return "welcome";
+		return "regsuccess";
 	}
 	
 	@RequestMapping("/login")
 	public String login(HttpServletRequest request) 
 	{
+		
 		return "login";
 		
 	}
@@ -48,13 +52,44 @@ public class ApplicationController {
 	{
 		String email = mem.getEmail();
 		String password = mem.getPassword();
+		String name = mem.getName();
 		if(memberSer.findByEmailAndPassword(email,password)!=null)
 		{
-			return "success";
+			mem = memberSer.findByEmailAndPassword(email,password);
+			HttpSession session = request.getSession();
+			session.setAttribute("member", mem);
+			if(request.getParameter("email").equalsIgnoreCase("admin@gmail.com")) {
+				return "adminSuccess";
+			}else {
+				return "success";
+			}
 		}
 		else {
 		
 			return "failure";
 		}
 	}
+	
+	@RequestMapping("/logoutMember")
+	public String logoutMember(HttpServletRequest request)
+	{
+		HttpSession session = request.getSession();
+		session.invalidate();
+		return "welcome";
+		
+	}
+	
+	
+	
+	//@RequestMapping("/Submit")
+	//public String submit(@ModelAttribute Member mem, HttpServletRequest request)
+	
+	
+	
+	@RequestMapping("/foodDiary")
+	public String foodDiary(@ModelAttribute Member mem, HttpServletRequest request)
+	{
+		return "foodDiary";
+	}
+	
 }

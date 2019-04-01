@@ -21,20 +21,20 @@ public class MemberService {
 		return members;
 	}
 	
-	public Member getById(int Id)
+	public Member getByMemberid(int Memberid)
 	{
-		return memberRep.findOne(Id);
+		return memberRep.findOne(Memberid);
 		
 	}
 	
-	public void upadteMember(int Id, Member member)
+	public void upadteMember(int Memberid, Member member)
 	{
 		memberRep.save(member);
 		
 	}
-	public void deleteMember(int Id)
+	public void deleteMember(int Memberid)
 	{
-		memberRep.delete(Id);
+		memberRep.delete(Memberid);
 	}
 	
 	public void addMember(Member mem) {
@@ -45,4 +45,7 @@ public class MemberService {
 	{
 		return memberRep.findByEmailAndPassword(email, password);
 	}
+	
+	
+
 }
