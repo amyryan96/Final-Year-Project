@@ -4,7 +4,7 @@
 <html>
 <style>
 body {
-	background-image: url("images/gym.jpg"); /* url(https://s3.envato.com/files/243754334/primag.jpg); */
+	
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
@@ -104,23 +104,23 @@ body {
 <body>
 	<div class="container">
 		<!---heading---->
-		<header class="heading"> Login To Your Gym </header>
+		<header class="heading"> Login To Your Electronics Store </header>
 		<hr></hr>
 		<!---Form starting---->
 		<div class="row ">
 			<div class="col-sm-12">
 				<div class="row">
 					<div class="col-xs-4">
-						<form class="form-horizontal" method="post" action="loginMember">
+						<form class="form-horizontal" method="post" action="loginCustomer">
 	<!-----For email---->
 					<div align = "left">
-						<label class="mail">Enter Email </label>
+						<label class="mail">Enter Username </label>
 					</div>
 					</div>
 					<div class="col-xs-8">
-						<input type="email" name="email" id="email"
+						<input type="email" name="username" id="username"
 							placeholder="Enter Your Email" class="form-control"
-							value="${member.email}" />
+							value="${customer.username}" />
 					</div>
 				</div>
 			</div>
@@ -137,7 +137,7 @@ body {
 					<div class="col-xs-8">
 						<input type="password" name="password" id="password"
 							placeholder="Enter Your Password" class="form-control"
-							value="${member.password}" />
+							value="${customer.password}" />
 					</div>
 				</div>
 			</div>

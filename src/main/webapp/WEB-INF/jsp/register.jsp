@@ -3,7 +3,7 @@
 <html>
 <style>
 body {
-	background-image: url("images/gym.jpg"); /* url(https://s3.envato.com/files/243754334/primag.jpg); */
+	
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
@@ -38,7 +38,7 @@ body {
 	text-align: left;
 }
 
-#fname {
+#name {
 	margin-top: 5px;
 }
 
@@ -53,7 +53,7 @@ body {
 }
 /*-------for email----------*/
 /*------label----*/
-#email {
+#username {
 	margin-top: 5px;
 }
 /*-----------for Password--------*/
@@ -78,41 +78,8 @@ body {
 #password {
 	margin-top: 6px;
 }
-/*------------for phone Number--------*/
-/*----------label--------*/
-.pno {
-	font-size: 18px;
-	margin-left: -13px;
-	margin-top: 10px;
-	color: #ff9;
-	text-align: left;
-}
 
-/*--------------for Gender---------------*/
-/*--------------label---------*/
-.gender {
-	color: white;
-	font-family: sans-serif;
-	font-size: 14px;
-	/* margin-left: 0px; */
-	margin-top: 8px;
-}
 
-/*---------- for Input type--------*/
-.col-xs-4.male {
-	color: white;
-	font-size: 13px;
-	margin-top: 9px;
-	padding-bottom: 16px;
-}
-
-.col-xs-4.female {
-	color: white;
-	font-size: 13px;
-	margin-top: 9px;
-	padding-bottom: 16px;
-	padding-right: 95px;
-}
 /*------------For submit button---------*/
 .sbutton {
 	color: white;
@@ -156,17 +123,17 @@ body {
 			<div class="col-sm-12">
 				<div class="row">
 					<div class="col-xs-4">
-						<form class="form-horizontal" method="POST" action="addMember">
+						<form class="form-horizontal" method="POST" action="addCustomer">
 						
-							<input type="hidden" name="Id" value="${member.Id}"> 
+							<input type="hidden" name="Id" value="${customer.Id}"> 
 								<div align = "left">
 							<label class="firstname">Enter Name </label>
 					</div>
 					</div>
 					<div class="col-xs-8">
-						<input type="text" name="name" id="fname"
+						<input type="text" name="name" id="name"
 							placeholder="Enter Your Name" class="form-control "
-							value="${member.name}" />
+							value="${customer.name}" />
 					</div>
 				</div>
 			</div>
@@ -175,32 +142,17 @@ body {
 				<div class="row">
 					<div class="col-xs-4" align = "left">
 					
-						<label class="mail">Enter Email </label>
+						<label class="mail">Enter Username </label>
 					
 					</div>
 					<div class="col-xs-8">
-					<input type="email" name="email" id="email"
-							placeholder="Enter Your Email" class="form-control"
-							value="${member.email}" />
+					<input type="email" name="username" id="username"
+							placeholder="Enter Your Username" class="form-control"
+							value="${customer.username}" />
 					</div>
 				</div>
 			</div>
-	<!-----For email---->
-			<div class="col-sm-12">
-				<div class="row">
-					<div class="col-xs-4">
-					<div align = "left">
-						<label class="mail">Enter Your Phone Number </label>
-					</div>
-					</div>
-					<div class="col-xs-8">
-					&nbsp
-					<input type="phoneNum" name="phoneNum" id="phonenum"
-							placeholder="Enter Your Number" class="form-control"
-							value="${member.phoneNum}" />
-					</div>
-				</div>
-			</div>
+	
 	<!-----For Password and confirm password---->
 			<div class="col-sm-12">
 				<div class="row">
@@ -212,27 +164,12 @@ body {
 					<div class="col-xs-8">
 						<input type="password" name="password" id="password"
 							placeholder="Enter Your Password" class="form-control"
-							value="${member.password}" />
+							value="${customer.password}" />
 					</div>
 				</div>
 			</div>
 
-			<!-----------For Phone number-------->
-			<div class="col-sm-12">
-				<div class="row">
-					<div class="col-xs-4 ">
-						<label class="gender">Gender </label>
-					</div>
-
-					<div class="col-xs-4 male">
-						<input type="radio" name="gender" id="gender" value="boy">Male</input>
-					</div>
-
-					<div class="col-xs-4 female">
-						<input type="radio" name="gender" id="gender" value="girl">Female</input>
-					</div>
-
-				</div>
+			
 				<div class="col-sm-12">
 					<input type="submit" class="btn btn-warning" value="Register" />
 				</div>

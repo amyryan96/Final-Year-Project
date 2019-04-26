@@ -4,8 +4,7 @@
 <style>
 body {
 	background-image:
-		/* url(https://s3.envato.com/files/243754334/primag.jpg); */
-		url("images/gym.jpg"); 
+		
 	background-repeat : no-repeat;
 	background-size: cover;
 	width: 100%;
@@ -78,13 +77,23 @@ body {
 <body>
 	<div class="container">
 		<!---heading---->
-		<header class="heading"> Welcome  To Your Gym </header>
+		
 		<hr></hr>
+<div role="navigation">
+		<div class="navbar navbar-inverse">
+		<a href="/welcome" class="navbar-brand"> Welcome  To Electronics Store</a>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/login">Login</a></li>
+					<li><a href="/register">Register</a></li>
+				</ul>
+			</div>
+		</div>
+		</div>
 
 
 
-
-		<form class="form-horizontal" method="post" action="loginMember">
+		<form class="form-horizontal" method="post" action="loginCustomer">
 
 			<div align="centre">
 				<a href="/register"

@@ -2,7 +2,7 @@
 <html>
 <style>
 body {
-	background-image: url("images/gym2.jpg"); /* url(https://s3.envato.com/files/243754334/primag.jpg); */
+	
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
@@ -10,23 +10,6 @@ body {
 	overflow: auto;
 }
 
-/*-----for border----*/
-.container {
-	font-family: Roboto, sans-serif;
-	background-image:
-		url("images/light-grey-background.jpg");
-		
-	border-style: 1px solid grey;
-	margin: 0 auto;
-	text-align: center;
-	opacity: 0.8;
-	margin-top: 67px;
-	box-shadow: 2px 5px 5px 0px #eee;
-	max-width: 550px;
-	padding-top: 10px;
-	height: 425px;
-	margin-top: 166px;
-}
 
 
 /*---for heading-----*/
@@ -87,12 +70,12 @@ body {
 
 <div role="navigation">
 		<div class="navbar navbar-inverse">
-		<a href="/welcome" class="navbar-brand">Gym HomePage</a>
+		<a href="/welcome" class="navbar-brand">Admin Home Page</a>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="/empschedule">View Your Schedule</a></li>
-					<li><a href="/createClass">Create a Gym Class</a></li>
-					
+					<!-- <li><a href="/empschedule">View Stock Items</a></li> -->
+					<!-- <li><a href="/admincart">Add Stock</a></li>
+					 -->
 					
 				</ul>
 			</div>
@@ -100,19 +83,85 @@ body {
 		</div>
 	<div class="container">
 		<!---heading---->
-		<header class="heading"> Welcome ${sessionScope.member.name} to your homepage  </header>
+		<header class="heading"> Welcome ${sessionScope.admin.name} to your homepage  </header>
 		<hr></hr>
 		
-	
-		<!-- <div align="centre">
-				<a href="/createClass"
-					style="font-family: Roboto, sans-serif; color: black; font-size: 25px; font-weight: bold;">Create a Gym Class</a>
-				&nbsp &nbsp &nbsp &nbsp &nbsp 
-				<a href="/allMembers"
-					style="font-family: Roboto, sans-serif; color: black; font-size: 25px; font-weight: bold;">View All Members </a>
+	<h1> Add Stock </h1>
+		<form class="form-horizontal" method="POST" action="addItem">
+		
+		
+		<input type="hidden" name="Id" value="${cart.CartId}"> 
+								
+			<div class="col-sm-12">
+				<div class="row">
+					<div class="col-xs-10">
+					<div align = "left">
+							<label class="date">Enter Product Title </label>
+					</div>
+					<div class="col-xs-60">
+						<input type="text" name="title" id="title"
+							placeholder="Enter The Product Title" class="form-control "
+							value="${cart.title}" />
+					</div>
+					</div>
+				</div>
+				</div>
+			<div class="col-sm-12">
+				<div class="row">
+					<div class="col-xs-10">
+					<div align = "left">
+						<label class="day">Enter The Price </label>
+					</div>
+					<div class="col-xs-60">
+					<input type="text" name="price" id="price"
+							placeholder="Enter The Price of the Item" class="form-control"
+							value="${cart.price}" />
+					</div>
+				</div>
+			</div>
+			</div>
+			<div class="col-sm-12">
+				<div class="row">
+					<div class="col-xs-10">
+					<div align = "left">
+						<label class="ate">Enter The Manufacturer </label>
+					</div>
+					<div class="col-xs-60">
+					<input type="text" name="manufac" id="manufac"
+							placeholder="Enter The Manufacturer" class="form-control"
+							value="${cart.manufac}" />
+					</div>
+				</div>
+			</div>
+			</div>
+			<div class="col-sm-12">
+				<div class="row">
+					<div class="col-xs-10">
+					<div align = "left">
+						<label class="ate">Enter The Category </label>
+					</div>
+					<div class="col-xs-60">
+					<input type="text" name="category" id="category"
+							placeholder="Enter The Category" class="form-control"
+							value="${cart.category}" />
+					</div>
+				</div>
+			</div>
 			</div>
 			
- -->
+			
+		&nbsp
+		<br>
+		<div class="col-sm-12">
+		
+					<input type="submit" class="btn btn-warning" value="Add To Cart" />
+				</div>
+	</form> 
+		<!-- <form class="form-horizontal" method="post" action="addItem">
+		<input type="submit" class="btn btn-warning" value="Add Stock" name= "addItem" />
+		
+		</form>  -->
+ 
  </div>
 	<form form class="form-horizontal" method="post" action="logoutMember">
 				<input type="submit" class="btn btn-warning" value="Logout" name="logoutMember" />

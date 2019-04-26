@@ -2,7 +2,7 @@
 <html>
 <style>
 body {
-	background-image: url("images/gym2.jpg"); /* url(https://s3.envato.com/files/243754334/primag.jpg); */
+	
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
@@ -27,41 +27,7 @@ body {
 	height: 425px;
 	margin-top: 166px;
 }
-#day {
-	margin-top: 5px;
-}
-.day{
-	
-	font-family: sans-serif;
-	color: black;
-	font-size: 14px;
-	margin-top: 13px;
-	
-}
-.date {
-	margin-left: 1px;
-	font-family: sans-serif;
-	font-size: 14px;
-	color: black;
-	margin-top: 5px;
-	text-align: left;
-}
 
-#date {
-	margin-top: 5px;
-}
-
-#ate {
-	margin-top: 5px;
-}
-
-.ate{
-	/* margin-left: 44px; */
-	font-family: sans-serif;
-	color: black;
-	font-size: 14px;
-	margin-top: 13px;
-}
 
 
 /*---for heading-----*/
@@ -110,33 +76,33 @@ body {
 <body>
 <div role="navigation">
 		<div class="navbar navbar-inverse">
-		<a href="/welcome" class="navbar-brand">Gym HomePage</a>
+		<a href="/welcome" class="navbar-brand">Your Cart</a>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="/login">Login</a></li>
-					<li><a href="/bookClass">Book a Gym Class</a></li>
-					<li><a href="/foodDiary">Log Your Food for the day</a></li>
+					
+					<li><a href="/shop">Go Shopping</a></li>
+					
 				</ul>
 			</div>
 		</div>
 		</div>
 	<div class="container">
 		<!---heading---->
-		<header class="heading"> Welcome To Your Food Diary Log System </header>
+		<header class="heading"> Welcome To The Shop</header>
 		<hr></hr>
-		<form class="form-horizontal" method="post" action="addFood">
-		<input type="hidden" name="Id" value="${foodDiary.diaryId}"> 
+		<form class="form-horizontal" method="post" action="addItem">
+		<input type="hidden" name="Id" value="${cart.CartId}"> 
 								
 			<div class="col-sm-12">
 				<div class="row">
 					<div class="col-xs-10">
 					<div align = "left">
-							<label class="date">Enter Date </label>
+							<label class="date">Enter Product Title </label>
 					</div>
 					<div class="col-xs-60">
-						<input type="date" name="date" id="date"
-							placeholder="Enter The Date" class="form-control "
-							value="${foodDairy.date}" />
+						<input type="text" name="title" id="title"
+							placeholder="Enter The Product Title" class="form-control "
+							value="${cart.title}" />
 					</div>
 					</div>
 				</div>
@@ -145,12 +111,12 @@ body {
 				<div class="row">
 					<div class="col-xs-10">
 					<div align = "left">
-						<label class="day">Enter The Day Of The Week </label>
+						<label class="day">Enter The Price </label>
 					</div>
 					<div class="col-xs-60">
-					<input type="text" name="dayofweek" id="dayofweek"
-							placeholder="Enter The Day Of The Week" class="form-control"
-							value="${foodDiary.dayOfWeek}" />
+					<input type="text" name="price" id="price"
+							placeholder="Enter The Price of the Item" class="form-control"
+							value="${cart.price}" />
 					</div>
 				</div>
 			</div>
@@ -159,23 +125,42 @@ body {
 				<div class="row">
 					<div class="col-xs-10">
 					<div align = "left">
-						<label class="ate">Enter The Food You Ate </label>
+						<label class="ate">Enter The Category </label>
 					</div>
 					<div class="col-xs-60">
-					<input type="text" name="foodType" id="foodType"
-							placeholder="Enter The Food You Ate" class="form-control"
-							value="${foodDiary.foodType}" />
+					<input type="text" name="category" id="category"
+							placeholder="Enter The Category" class="form-control"
+							value="${cart.category}" />
 					</div>
 				</div>
 			</div>
 			</div>
 			
+			<div class="col-sm-12">
+				<div class="row">
+					<div class="col-xs-10">
+					<div align = "left">
+						<label class="ate">Enter The Manufacturer </label>
+					</div>
+					<div class="col-xs-60">
+					<input type="text" name="manufac" id="manufac"
+							placeholder="Enter The Manufacturer" class="form-control"
+							value="${cart.manufacturer}" />
+					</div>
+				</div>
+			</div>
+			</div>
 		&nbsp
 		<br>
-		<div class="col-sm-12">
-					<input type="submit" class="btn btn-warning" value="Input" />
-				</div>
+		
 	</form>
+	&nbsp
+	
+		<form class="form-horizontal" method="post" action="addItem">
+		<input type="submit" class="btn btn-warning" value="Add To Cart" name= "addItem" />
+		
+		</form>
+	&nbsp
 	<form form class="form-horizontal" method="post" action="logoutMember">
 				<input type="submit" class="btn btn-warning" value="Logout" name="logoutMember" />
 				</form>

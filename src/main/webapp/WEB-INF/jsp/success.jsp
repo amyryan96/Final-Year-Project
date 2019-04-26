@@ -2,7 +2,7 @@
 <html>
 <style>
 body {
-	background-image: url("images/gym2.jpg"); /* url(https://s3.envato.com/files/243754334/primag.jpg); */
+	
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
@@ -10,23 +10,7 @@ body {
 	overflow: auto;
 }
 
-/*-----for border----*/
-.container {
-	font-family: Roboto, sans-serif;
-	background-image:
-		url("images/light-grey-background.jpg");
-		
-	border-style: 1px solid grey;
-	margin: 0 auto;
-	text-align: center;
-	opacity: 0.8;
-	margin-top: 67px;
-	box-shadow: 2px 5px 5px 0px #eee;
-	max-width: 550px;
-	padding-top: 10px;
-	height: 425px;
-	margin-top: 166px;
-}
+
 
 
 /*---for heading-----*/
@@ -78,12 +62,12 @@ body {
 <body>
 <div role="navigation">
 		<div class="navbar navbar-inverse">
-		<a href="/welcome" class="navbar-brand">Gym HomePage</a>
+		<a href="/welcome" class="navbar-brand">Electronics Home Page</a>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="/login">Login</a></li>
-					<li><a href="/bookClass">Book a Gym Class</a></li>
-					<li><a href="/foodDiary">Log Your Food for the day</a></li>
+				
+					
+				
 				</ul>
 			</div>
 		</div>
@@ -119,9 +103,12 @@ body {
 
 	<div class="container">
 		<!---heading---->
-		<header class="heading"> Welcome ${sessionScope.member.name} to your homepage  </header>
+		<header class="heading"> Welcome ${sessionScope.customer.name} to your homepage  </header>
 		<hr></hr>
 		
+		<form class="form-horizontal" method="post" action="shoppingCart">
+		<input type ="submit" class = "btn btn-warning" value ="Shopping Cart" name = "Shopping Cart" />
+		</form>
 	
 		<div align="centre">
 				

@@ -10,14 +10,19 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.demo.member.Member;
-import com.example.demo.member.MemberService;
+import com.example.demo.member.Cart;
+import com.example.demo.member.CartService;
+import com.example.demo.member.Customer;
+import com.example.demo.member.CustomerService;
 
 @Controller
 public class ApplicationController {
 
 	@Autowired
-	private MemberService memberSer;
+	private CustomerService custSer;
+	
+	private CartService cartSer; 
+	
 	
 	@RequestMapping("/")
 	public String welcome(HttpServletRequest request) {
@@ -31,12 +36,20 @@ public class ApplicationController {
 		return "register";
 	}
 	
-	@PostMapping("/addMember")
-	public String registerMember(@ModelAttribute Member mem, BindingResult bindingresult, HttpServletRequest request)
+	@PostMapping("/addCustomer")
+	public String registerCustomer(@ModelAttribute Customer cust, BindingResult bindingresult, HttpServletRequest request)
 	{
 		
-		memberSer.addMember(mem);
+		custSer.addCustomer(cust);
 		return "regsuccess";
+	}
+	
+	@PostMapping("/addItem")
+	public String addItem(@ModelAttribute Cart cart, BindingResult bindingresult, HttpServletRequest request)
+	{
+		
+		cartSer.addItem(cart);
+		return "adminSuccess";
 	}
 	
 	@RequestMapping("/login")
@@ -47,18 +60,18 @@ public class ApplicationController {
 		
 	}
 	
-	@RequestMapping("/loginMember")
-	public String loginMember(@ModelAttribute Member mem, HttpServletRequest request)
+	@RequestMapping("/loginCustomer")
+	public String loginCustomer(@ModelAttribute Customer cust, HttpServletRequest request)
 	{
-		String email = mem.getEmail();
-		String password = mem.getPassword();
-		String name = mem.getName();
-		if(memberSer.findByEmailAndPassword(email,password)!=null)
+		String username = cust.getUsername();
+		String password = cust.getPassword();
+		
+		if(custSer.findByUsernameAndPassword(username,password)!=null)
 		{
-			mem = memberSer.findByEmailAndPassword(email,password);
+			cust = custSer.findByUsernameAndPassword(username,password);
 			HttpSession session = request.getSession();
-			session.setAttribute("member", mem);
-			if(request.getParameter("email").equalsIgnoreCase("admin@gmail.com")) {
+			session.setAttribute("customer", cust);
+			if(request.getParameter("username").equalsIgnoreCase("admin@gmail.com")) {
 				return "adminSuccess";
 			}else {
 				return "success";
@@ -80,16 +93,17 @@ public class ApplicationController {
 	}
 	
 	
-	
-	//@RequestMapping("/Submit")
-	//public String submit(@ModelAttribute Member mem, HttpServletRequest request)
-	
-	
-	
-	@RequestMapping("/foodDiary")
-	public String foodDiary(@ModelAttribute Member mem, HttpServletRequest request)
+	@RequestMapping("/shoppingCart")
+	public String cart(HttpServletRequest request)
 	{
-		return "foodDiary";
+		return "shop";
 	}
+	
+	
+	/*@PostMapping("/submititem")
+	public String item(HttpServletRequest request)
+	{
+		
+	}*/
 	
 }
