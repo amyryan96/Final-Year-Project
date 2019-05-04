@@ -9,7 +9,6 @@ body {
 	height: 100vh;
 	overflow: auto;
 }
-
 /*-----for border----*/
 .container {
 	font-family: Roboto, sans-serif;
@@ -27,8 +26,6 @@ body {
 	height: 300px;
 	margin-top: 166px;
 }
-
-
 /*---for heading-----*/
 .heading {
 	text-decoration: bold;
@@ -52,7 +49,6 @@ body {
 	font-size: 14px;
 	margin-top: 13px;
 }
-
 .pass {
 	color: white;
 	margin-top: 9px;
@@ -61,12 +57,9 @@ body {
 	/* margin-left: 6px; */
 	margin-top: 9px;
 }
-
 #password {
 	margin-top: 6px;
 }
-
-
 /*------------For submit button---------*/
 .sbutton {
 	color: white;
@@ -78,7 +71,6 @@ body {
 	margin-top: 16px;
 	box-shadow: 0px 2px 2px 0px white;
 }
-
 .btn.btn-warning:hover {
 	box-shadow: 2px 1px 2px 3px #99ccff;
 	background: #5900a6;
@@ -103,7 +95,7 @@ body {
 	<div class="container">
 		<!---heading---->
 		<header class="heading"> Register Success! Now Login To Your Gym </header>
-		
+
 		<hr></hr>
 		<!---Form starting---->
 		<div class="row ">
@@ -141,8 +133,8 @@ body {
 				</div>
 			</div>
 
-			
-			
+
+
 				</div>
 				&nbsp
 				&nbsp
@@ -158,4 +150,4 @@ body {
 	</div>
 	</form>
 </body>
-</html>
+</html> 

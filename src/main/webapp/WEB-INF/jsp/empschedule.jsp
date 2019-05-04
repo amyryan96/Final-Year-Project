@@ -9,7 +9,6 @@ body {
 	height: 100vh;
 	overflow: auto;
 }
-
 /*-----for border----*/
 .container {
 	font-family: Roboto, sans-serif;
@@ -27,8 +26,6 @@ body {
 	height: 425px;
 	margin-top: 166px;
 }
-
-
 /*---for heading-----*/
 .heading {
 	text-decoration: bold;
@@ -38,7 +35,6 @@ body {
 	font-weight: bold;
 	padding-top: 10px;
 }
-
 .pass {
 	color: white;
 	margin-top: 9px;
@@ -47,9 +43,6 @@ body {
 	/* margin-left: 6px; */
 	
 }
-
-
-
 /*------------For submit button---------*/
 .sbutton {
 	color: white;
@@ -61,7 +54,6 @@ body {
 	margin-top: 16px;
 	box-shadow: 0px 2px 2px 0px white;
 }
-
 .btn.btn-warning:hover {
 	box-shadow: 2px 1px 2px 3px #808080;
 	background: #000000;
@@ -90,24 +82,24 @@ body {
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li><a href="/addClass">Create a Gym Class</a></li>
-				
+
 				</ul>
 			</div>
 		</div>
 		</div>
-		
+
 	<div class="container">
 		<!---heading---->
 		<header class="heading"> Welcome ${sessionScope.member.name} to your Work Schedule Page  </header>
 		<hr></hr>
-		
-	
+
+
 			</div>
-			
+
 			<form form class="form-horizontal" method="post" action="logoutMember">
 				<input type="submit" class="btn btn-warning" value="Logout" name="logoutMember" />
 				</form>
-			
+
 
 </body>
-</html>
+</html> 

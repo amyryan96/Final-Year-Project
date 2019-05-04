@@ -13,40 +13,45 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.demo.member.Member;
 import com.example.demo.member.MemberService;
 
+
+
+
+
+
 @Controller
 public class ApplicationController {
 
 	@Autowired
 	private MemberService memberSer;
-	
+
 	@RequestMapping("/")
 	public String welcome(HttpServletRequest request) {
-		
+
 		return "welcome";
 	}
-	
+
 	@RequestMapping("/register")
 	public String register()
 	{
 		return "register";
 	}
-	
+
 	@PostMapping("/addMember")
 	public String registerMember(@ModelAttribute Member mem, BindingResult bindingresult, HttpServletRequest request)
 	{
-		
+
 		memberSer.addMember(mem);
 		return "regsuccess";
 	}
-	
+
 	@RequestMapping("/login")
 	public String login(HttpServletRequest request) 
 	{
-		
+
 		return "login";
-		
+
 	}
-	
+
 	@RequestMapping("/loginMember")
 	public String loginMember(@ModelAttribute Member mem, HttpServletRequest request)
 	{
@@ -65,31 +70,31 @@ public class ApplicationController {
 			}
 		}
 		else {
-		
+
 			return "failure";
 		}
 	}
-	
+
 	@RequestMapping("/logoutMember")
 	public String logoutMember(HttpServletRequest request)
 	{
 		HttpSession session = request.getSession();
 		session.invalidate();
 		return "welcome";
-		
+
 	}
-	
-	
-	
+
+
+
 	//@RequestMapping("/Submit")
 	//public String submit(@ModelAttribute Member mem, HttpServletRequest request)
-	
-	
-	
+
+
+
 	@RequestMapping("/foodDiary")
 	public String foodDiary(@ModelAttribute Member mem, HttpServletRequest request)
 	{
 		return "foodDiary";
 	}
-	
+
 }

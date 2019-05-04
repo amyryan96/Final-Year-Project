@@ -11,20 +11,20 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Employee {
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int empId;
 	private String name;
 	private String email;
 	private int phone;
-	
+
 	@OneToMany
 	private Set<ClassDetails> bookc = new HashSet<>();
-	
+
 	public Employee()
 	{
-		
+
 	}
 
 	public Employee(int empId, String name, String email, int phone)
@@ -66,6 +66,6 @@ public class Employee {
 	public void setPhone(int phone) {
 		this.phone = phone;
 	}
-	
-	
+
+
 }

@@ -1,4 +1,4 @@
- <!Doctype html>
+<!Doctype html>
 <html>
 <style>
 body {
@@ -9,7 +9,6 @@ body {
 	height: 100vh;
 	overflow: auto;
 }
-
 /*-----for border----*/
 .container {
 	font-family: Roboto, sans-serif;
@@ -27,8 +26,6 @@ body {
 	height: 425px;
 	margin-top: 166px;
 }
-
-
 /*---for heading-----*/
 .heading {
 	text-decoration: bold;
@@ -38,7 +35,6 @@ body {
 	font-weight: bold;
 	padding-top: 10px;
 }
-
 .pass {
 	color: white;
 	margin-top: 9px;
@@ -47,9 +43,6 @@ body {
 	/* margin-left: 6px; */
 	
 }
-
-
-
 /*------------For submit button---------*/
 .sbutton {
 	color: white;
@@ -61,7 +54,6 @@ body {
 	margin-top: 16px;
 	box-shadow: 0px 2px 2px 0px white;
 }
-
 .btn.btn-warning:hover {
 	box-shadow: 2px 1px 2px 3px #808080;
 	background: #000000;
@@ -92,8 +84,8 @@ body {
 				<ul class="nav navbar-nav">
 					<li><a href="/empschedule">View Your Schedule</a></li>
 					<li><a href="/createClass">Create a Gym Class</a></li>
-					
-					
+
+
 				</ul>
 			</div>
 		</div>
@@ -102,8 +94,8 @@ body {
 		<!---heading---->
 		<header class="heading"> Welcome ${sessionScope.member.name} to your homepage  </header>
 		<hr></hr>
-		
-	
+
+
 		<!-- <div align="centre">
 				<a href="/createClass"
 					style="font-family: Roboto, sans-serif; color: black; font-size: 25px; font-weight: bold;">Create a Gym Class</a>

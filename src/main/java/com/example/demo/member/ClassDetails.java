@@ -7,7 +7,7 @@ import javax.persistence.Id;
 
 @Entity
 public class ClassDetails {
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int classId;
@@ -17,18 +17,18 @@ public class ClassDetails {
 	private int classQuantity;
 	private String date;
 	private int currentQuantity;
-	
-	
+
+
 	 /* when class is created this is automatically made 0
 	 * the when a user is added this increases by one
 	 * and when adding a user you will check if this equals quantity and
 	 * if it does the user isnt added to the class
 	 * because the class is full
 	 * */
-	
-	
-	
-	
+
+
+
+
 	public String getClassName() {
 		return className;
 	}
@@ -47,22 +47,22 @@ public class ClassDetails {
 
 	public ClassDetails()
 	{
-		
+
 	}
-	
+
 	public ClassDetails( String className, String classType, String classTime, int classQuantity, String date, int currentQuantity)
 	{
-	
+
 		this.className = className;
 		this.classType = classType;
 		this.classTime = classTime;
 		this.classQuantity = classQuantity;
 		this.date = date;
 		this.currentQuantity = currentQuantity;
-		
-		
+
+
 	}
-	
+
 	public int getClassId() {
 		return classId;
 	}
@@ -112,8 +112,8 @@ public class ClassDetails {
 		this.date = date;
 	}
 
-	
-	
-	
+
+
+
 
 }

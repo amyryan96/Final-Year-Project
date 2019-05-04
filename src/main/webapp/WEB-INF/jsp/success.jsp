@@ -9,14 +9,13 @@ body {
 	height: 100vh;
 	overflow: auto;
 }
-
 /*-----for border----*/
 .container {
 	font-family: Roboto, sans-serif;
 	background-image:
-		/* url("images/light-grey-background.jpg"); */
+		url("images/light-grey-background.jpg");
 		
-	/* border-style: 1px solid grey; */
+	border-style: 1px solid grey;
 	margin: 0 auto;
 	text-align: center;
 	opacity: 0.8;
@@ -27,8 +26,6 @@ body {
 	height: 425px;
 	margin-top: 166px;
 }
-
-
 /*---for heading-----*/
 .heading {
 	text-decoration: bold;
@@ -38,9 +35,6 @@ body {
 	font-weight: bold;
 	padding-top: 10px;
 }
-
-
-
 /*------------For submit button---------*/
 .sbutton {
 	color: white;
@@ -52,11 +46,10 @@ body {
 	margin-top: 16px;
 	box-shadow: 0px 2px 2px 0px white;
 }
-
 .btn.btn-warning:hover {
 	box-shadow: 2px 1px 2px 3px #808080;
 	background: #000000;
-	color: #ccc;
+	color: #fff;
 	transition: background-color 1.15s ease-in-out, border-color 1.15s
 		ease-in-out, box-shadow 1.15s ease-in-out;
 }
@@ -94,7 +87,6 @@ body {
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
@@ -119,12 +111,12 @@ body {
 
 	<div class="container">
 		<!---heading---->
-		<header class="heading" style= "color: black;"> Welcome ${sessionScope.member.name} To Your Homepage  </header>
+		<header class="heading"> Welcome ${sessionScope.member.name} to your homepage  </header>
 		<hr></hr>
-		
-	
+
+
 		<div align="centre">
-				
+
 				<br/>
 				<br/>
 				<br/>
@@ -134,7 +126,7 @@ body {
 				<form form class="form-horizontal" method="post" action="logoutMember">
 				<input type="submit" class="btn btn-warning" value="Logout" name="logoutMember" />
 				</form>
-				
+
 			</div>
 			</div>
 

@@ -12,30 +12,30 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class Gym {
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int GymId;
 	private String location;
 	private String email;
 	private String phone;
-	
+
 	@OneToMany 
 	private Set<Employee> emp = new HashSet<Employee>();
-	
+
 	@OneToMany 
 	private Set<Member> mem = new HashSet<Member>();
-	
+
 	@OneToOne
 	private ClassDetails class1;
-	
+
 
 	public Gym()
 	{
-		
+
 	}
-	
-	
+
+
 	public Gym(String location, String email, String phone, ClassDetails class1) {
 		super();
 		this.location = location;
@@ -97,7 +97,7 @@ public class Gym {
 		this.emp = emp;
 	}
 
-	
+
 	public Set<Member> getMem() {
 		return mem;
 	}
@@ -108,6 +108,5 @@ public class Gym {
 	}
 
 }
-
 
 

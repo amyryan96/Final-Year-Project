@@ -6,7 +6,7 @@
 body {
 	background-image:
 		/* url(https://s3.envato.com/files/243754334/primag.jpg); */
-		url("images/gym2.jpg");
+		
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
@@ -72,7 +72,7 @@ body {
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <meta charset="UTF-8">
-<title>Registration Form</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -81,7 +81,7 @@ body {
 		<header class="heading"> Unsuccessful Login</header>
 		
 		&nbsp 
-		<a href="/regsuccess"
+		<a href="/welcome"
 			style="font-family: Roboto, sans-serif; color: black; font-size: 25px; font-weight: bold;">Please Go
 			Back and Try Again</a>
 

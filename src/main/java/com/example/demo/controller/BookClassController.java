@@ -16,20 +16,20 @@ import com.example.demo.member.Member;
 
 @Controller
 public class BookClassController {
-	
+
 	@Autowired
 	private ClassDetailsService bcs;
-	
+
 	@RequestMapping("/createClass")
 	public String createClass()
 	{
 		return "addClass";
 	}
-	
+
 	@PostMapping("/addClass")
 	public String addClass( HttpServletRequest request)
 	{
-		
+
 		String name = request.getParameter("className");
 		String type = request.getParameter("classType");
 		String time = request.getParameter("classTime");
@@ -41,25 +41,25 @@ public class BookClassController {
 		bcs.addClass(class1);
 		return "adminSuccess";
 	}
-	
+
 	@RequestMapping("/bookClass")
 	public String bookClass()
 	{
 		return "bookClass";
 	}
-	
+
 	@RequestMapping("/bookingClass")
 	public String bookingClass( HttpServletRequest request, HttpSession session) {
-		
+
 		int quantity = Integer.parseInt(request.getParameter("classQuantity"));
 		int currentq = Integer.parseInt(request.getParameter("currenQuantity"));
-	
-		
-		
+
+
+
 		int classid = Integer.parseInt(request.getParameter("classToBook"));
 		ClassDetails class1 = bcs.getByClassid(classid);
 		Member mem1 = (Member)session.getAttribute("member");
-		
+
 		if(currentq <  quantity)
 		{
 			mem1.getBooking().add(class1);
@@ -68,8 +68,8 @@ public class BookClassController {
 		{
 			System.out.println("I'm sorry this class has reached it's capacity! Please choose another class or day");
 		}
-	
-		
+
+
 		return "success";
 	}
 

@@ -119,6 +119,7 @@ body {
 					<li><form form class="form-horizontal" method="post" action="logoutMember">
 				<input type="submit" class="btn btn-warning" value="Logout" name="logoutMember" />
 				</form></li>
+				<li><a href="/viewFoodLogs">View Previous Food Diary Logs</a></li>
 				</div>
 				</ul>
 			</div>
@@ -180,7 +181,7 @@ body {
 					<input type="submit" class="btn btn-warning" value="Input" />
 				</div>
 	</form>
-	&nbsp
+	
 	<!-- <form form class="form-horizontal" method="post" action="logoutMember">
 				<input type="submit" class="btn btn-warning" value="Logout" name="logoutMember" />
 				</form> -->

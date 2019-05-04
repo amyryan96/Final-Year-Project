@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Member {
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int Memberid;
@@ -22,11 +22,11 @@ public class Member {
 	private String email;
 	private String phoneNum;
 	private String password;
-	
+
 	@ManyToMany(cascade = CascadeType.ALL)
 	private Set<ClassDetails> booking = new HashSet<>();
-	
-	
+
+
 	public Set<ClassDetails> getBooking() {
 		return booking;
 	}
@@ -34,10 +34,10 @@ public class Member {
 	public void setBooking(Set<ClassDetails> booking) {
 		this.booking = booking;
 	}
-	
+
 	@OneToMany
 	private Set<foodDiary> diary = new HashSet<>();
-	
+
 	public Set<foodDiary> getDiary() {
 		return diary;
 	}
@@ -50,12 +50,12 @@ public class Member {
 
 	public Member()
 	{
-		
+
 	}
-	
-	
+
+
 	public Member(int Memberid, String name, String email, String phoneNum, String password) {
-		
+
 		this.Memberid = Memberid;
 		this.name = name;
 		this.email = email;
@@ -63,7 +63,7 @@ public class Member {
 		this.password = password;
 	}
 
-	
+
 	public int getMemberid() {
 		return Memberid;
 	}
@@ -121,7 +121,6 @@ public class Member {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
-}
 
+
+}

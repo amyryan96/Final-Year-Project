@@ -14,13 +14,13 @@ public class MemberController {
 
 	@Autowired
 	private MemberService memSer;
-	
+
 	@RequestMapping("/allmembers")
 	public List<Member> getAllMembers()
 	{
 		return memSer.getAllMembers();
 	}
-	
+
 	@RequestMapping("/members/{Memberid}")
 		public Member getMemberByMemberid(@PathVariable("Memberid") int Memberid) {
 			return memSer.getByMemberid(Memberid);
@@ -32,21 +32,21 @@ public class MemberController {
 	{
 		memSer.addMember(mem);
 	}
-	
+
 	@RequestMapping(method=RequestMethod.PUT, value="/member/{Memberid}")
 	public void updateMember(@RequestBody Member mem, @PathVariable("Memberid") int Memberid)
 	{
 		memSer.upadteMember(Memberid, mem);
 	}
-	
+
 	@RequestMapping(method=RequestMethod.DELETE, value="/member/{Memberid}")
 	public void deleteMember(@PathVariable("Memberid") int Memberid)
 	{
 		memSer.deleteMember(Memberid);
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
 }

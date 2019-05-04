@@ -81,9 +81,6 @@ body {
 		<header class="heading"> Welcome  To Your Gym </header>
 		<hr></hr>
 
-
-
-
 		<form class="form-horizontal" method="post" action="loginMember">
 
 			<div align="centre">

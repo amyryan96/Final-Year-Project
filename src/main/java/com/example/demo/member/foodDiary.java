@@ -7,8 +7,8 @@ import javax.persistence.Id;
 
 @Entity
 public class foodDiary {
-	
-	
+
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int diaryId;
@@ -16,13 +16,13 @@ public class foodDiary {
 	private int calories;
 	private String dayOfWeek;
 	private String date;
-	
-	
+
+
 	public foodDiary()
 	{
-		
+
 	}
-	
+
 	public foodDiary(int diaryId, String foodType, int calories, String dayOfWeek, String date)
 	{
 		this.diaryId = diaryId;
@@ -71,8 +71,8 @@ public class foodDiary {
 	public void setDayOfWeek(String dayOfWeek) {
 		this.dayOfWeek = dayOfWeek;
 	}
-	
-	
-	
+
+
+
 
 }

@@ -10,7 +10,6 @@ body {
 	height: 100vh;
 	overflow: auto;
 }
-
 /*-----for border----*/
 .container {
 	font-family: Roboto, sans-serif;
@@ -26,7 +25,6 @@ body {
 	height: 500px;
 	margin-top: 166px;
 }
-
 /*---for heading-----*/
 .heading {
 	text-decoration: bold;
@@ -36,7 +34,6 @@ body {
 	font-weight: bold;
 	padding-top: 10px;
 }
-
 .pass {
 	color: white;
 	margin-top: 9px;
@@ -44,7 +41,6 @@ body {
 	font-family: sans-serif;
 	/* margin-left: 6px; */
 }
-
 /*------------For submit button---------*/
 .sbutton {
 	color: white;
@@ -56,7 +52,6 @@ body {
 	margin-top: 16px;
 	box-shadow: 0px 2px 2px 0px white;
 }
-
 .btn.btn-warning:hover {
 	box-shadow: 2px 1px 2px 3px #99ccff;
 	background: #000000;
@@ -64,12 +59,10 @@ body {
 	transition: background-color 1.15s ease-in-out, border-color 1.15s
 		ease-in-out, box-shadow 1.15s ease-in-out;
 }
-
 input[type="radio"]:checked + span
 {
     font-weight: bold;
 }
-
 </style>
 <head>
 <link
@@ -92,8 +85,8 @@ input[type="radio"]:checked + span
 				<ul class="nav navbar-nav">
 					<li><a href="/empschedule">View Your Schedule</a></li>
 					<li><a href="/createClass">Create a Gym Class</a></li>
-					
-					
+
+
 				</ul>
 			</div>
 		</div>
@@ -105,35 +98,35 @@ input[type="radio"]:checked + span
 	<!-- 	<h2 style="font-family: Roboto, sans-serif; color: black; font-weight: bold;">Choose the type of class you wish to
 			attend</h2> -->
 			<form class="form-horizontal" method="post" action="addClass">
-		
+
 			<input type="hidden" name="Id" value="${ ClassDetails.classId}"> 
 			<div align = "left">
 			Please enter the name of the class
 			<input type="text" name="className" value="${ClassDetails.className }" /> 
-			
+
 			<br/>Choose class type <br/>
 			<input type="radio" name="classType" value="spin"> <span>Spin Class</span><br>
 			<input type="radio" name="classType" value="cardio"> <span>Cardio Class</span><br> 
 			<input type="radio" name="classType" value="weights"><span>Weights Training</span>
-		
+
 		<h2 style="font-family: Roboto, sans-serif; color: black; font-weight: bold;">
-		
+
 		Choose the time of day you would like to schedule the class</h2>
 		<input type="radio" name="classTime" value="morning"><span>Morning Session</span><br>
 		<input type="radio" name="classTime" value="afternoon"><span> Afternoon Session</span><br> 
 		<input type="radio" name="classTime" value="evening"><span>Evening Session</span><br>
-	
+
 		Please enter the date of the class<br>
 		<input type="text" name = "date" value="${ClassDetails.date}"> <br>
-		
+
 		Please enter the max capacity of the class<br>
 		<input type="text" name = "classQuantity" value="${ClassDetails.classQuantity}"> <br>
-		
+
 		</form>
 		<br>
 		<input type="submit" value="Submit">
 		</div>
-		
+
 		<form form class="form-horizontal" method="post" action="logoutMember">
 				<input type="submit" class="btn btn-warning" value="Logout" name="logoutMember" />
 				</form>
