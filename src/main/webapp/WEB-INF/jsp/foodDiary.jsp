@@ -20,10 +20,10 @@ body {
 	margin: 0 auto;
 	text-align: center;
 	opacity: 0.8;
-	margin-top: 67px;
+	margin-top: 90px;
 	box-shadow: 2px 5px 5px 0px #eee;
 	max-width: 550px;
-	padding-top: 10px;
+	padding-top: 15px;
 	height: 425px;
 	margin-top: 166px;
 }
@@ -77,7 +77,7 @@ body {
 
 /*------------For submit button---------*/
 .sbutton {
-	color: black;
+	color: #82817a;
 	font-size: 20px;
 	border: 1px solid white;
 	background-color: #080808;
@@ -90,7 +90,7 @@ body {
 .btn.btn-warning:hover {
 	box-shadow: 2px 1px 2px 3px #808080;
 	background: #000000;
-	color: #fff;
+	/* color: #fff; */
 	transition: background-color 1.15s ease-in-out, border-color 1.15s
 		ease-in-out, box-shadow 1.15s ease-in-out;
 }
@@ -113,9 +113,13 @@ body {
 		<a href="/welcome" class="navbar-brand">Gym HomePage</a>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="/login">Login</a></li>
 					<li><a href="/bookClass">Book a Gym Class</a></li>
 					<li><a href="/foodDiary">Log Your Food for the day</a></li>
+					<div align = "left">
+					<li><form form class="form-horizontal" method="post" action="logoutMember">
+				<input type="submit" class="btn btn-warning" value="Logout" name="logoutMember" />
+				</form></li>
+				</div>
 				</ul>
 			</div>
 		</div>
@@ -176,8 +180,9 @@ body {
 					<input type="submit" class="btn btn-warning" value="Input" />
 				</div>
 	</form>
-	<form form class="form-horizontal" method="post" action="logoutMember">
+	&nbsp
+	<!-- <form form class="form-horizontal" method="post" action="logoutMember">
 				<input type="submit" class="btn btn-warning" value="Logout" name="logoutMember" />
-				</form>
+				</form> -->
 </body>
 </html>

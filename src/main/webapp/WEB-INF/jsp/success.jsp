@@ -14,9 +14,9 @@ body {
 .container {
 	font-family: Roboto, sans-serif;
 	background-image:
-		url("images/light-grey-background.jpg");
+		/* url("images/light-grey-background.jpg"); */
 		
-	border-style: 1px solid grey;
+	/* border-style: 1px solid grey; */
 	margin: 0 auto;
 	text-align: center;
 	opacity: 0.8;
@@ -56,7 +56,7 @@ body {
 .btn.btn-warning:hover {
 	box-shadow: 2px 1px 2px 3px #808080;
 	background: #000000;
-	color: #fff;
+	color: #ccc;
 	transition: background-color 1.15s ease-in-out, border-color 1.15s
 		ease-in-out, box-shadow 1.15s ease-in-out;
 }
@@ -119,7 +119,7 @@ body {
 
 	<div class="container">
 		<!---heading---->
-		<header class="heading"> Welcome ${sessionScope.member.name} to your homepage  </header>
+		<header class="heading" style= "color: black;"> Welcome ${sessionScope.member.name} To Your Homepage  </header>
 		<hr></hr>
 		
 	

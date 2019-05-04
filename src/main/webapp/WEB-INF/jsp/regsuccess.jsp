@@ -14,7 +14,7 @@ body {
 .container {
 	font-family: Roboto, sans-serif;
 	background-image:
-		url(https://image.freepik.com/free-vector/dark-blue-blurred-background_1034-589.jpg);
+		/* url(https://image.freepik.com/free-vector/dark-blue-blurred-background_1034-589.jpg); */
 		/* ropes.jfif; */
 	border-style: 1px solid grey;
 	margin: 0 auto;
