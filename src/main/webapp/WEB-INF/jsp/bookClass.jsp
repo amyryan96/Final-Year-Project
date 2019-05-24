@@ -92,9 +92,14 @@ input[type="radio"]:checked + span
 		<a href="/welcome" class="navbar-brand">Gym HomePage</a>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="/login">Login</a></li>
 					<li><a href="/bookClass">Book a Gym Class</a></li>
 					<li><a href="/foodDiary">Log Your Food for the day</a></li>
+					<li><a href="/viewFoodLogs">View Previous Food Diary Logs</a></li>
+					<div align = "left">
+					<li><form form class="form-horizontal" method="post" action="logoutMember">
+				<input type="submit" class="btn btn-warning" value="Logout" name="logoutMember" />
+				</form></li>
+				</div>
 				</ul>
 			</div>
 		</div>

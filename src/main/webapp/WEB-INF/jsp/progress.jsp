@@ -83,7 +83,12 @@ body {
 				<ul class="nav navbar-nav">
 					<li><a href="/bookClass">Book a Gym Class</a></li>
 					<li><a href="/foodDiary">Log Your Food for Today</a></li>
-
+					<li><a href="/viewFoodLogs">View Previous Food Diary Logs</a></li>
+					<div align = "centre">
+					<li><form form class="form-horizontal" method="post" action="logoutMember">
+				<input type="submit" class="btn btn-warning" value="Logout" name="logoutMember" />
+				</form></li>
+					</div>
 				</ul>
 			</div>
 		</div>
@@ -93,14 +98,118 @@ body {
 		<!---heading---->
 		<header class="heading"> Welcome ${sessionScope.member.name} to your Progress Report  </header>
 		<hr></hr>
-
-
-
 			</div>
-
-			<form form class="form-horizontal" method="post" action="logoutMember">
-				<input type="submit" class="btn btn-warning" value="Logout" name="logoutMember" />
-				</form>
-
 </body>
 </html>
+
+
+
+
+
+<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<%@ page import="com.google.gson.Gson"%>
+<%@ page import="com.google.gson.JsonObject"%>
+ 
+<% 
+Gson gsonObj = new Gson();
+Map<Object,Object> map = null;
+List<Map<Object,Object>> list = new ArrayList<Map<Object,Object>>();
+ 
+map = new HashMap<Object,Object>(); map.put("label", "Sunday"); map.put("y", 60); list.add(map);
+map = new HashMap<Object,Object>(); map.put("label", "Monday"); map.put("y", 30); list.add(map);
+map = new HashMap<Object,Object>(); map.put("label", "Tuesday"); map.put("y", 25); list.add(map);
+map = new HashMap<Object,Object>(); map.put("label", "Wednesday"); map.put("y", 30); list.add(map);
+map = new HashMap<Object,Object>(); map.put("label", "Thursday"); map.put("y", 35); list.add(map);
+map = new HashMap<Object,Object>(); map.put("label", "Friday"); map.put("y", 20); list.add(map);
+map = new HashMap<Object,Object>(); map.put("label", "Saturday"); map.put("y", 30); list.add(map);
+ 
+String dataPoints1 = gsonObj.toJson(list);
+ 
+list = new ArrayList<Map<Object,Object>>();
+map = new HashMap<Object,Object>(); map.put("label", "Sunday"); map.put("y", 45); list.add(map);
+map = new HashMap<Object,Object>(); map.put("label", "Monday"); map.put("y", 20); list.add(map);
+map = new HashMap<Object,Object>(); map.put("label", "Tuesday"); map.put("y", 25); list.add(map);
+map = new HashMap<Object,Object>(); map.put("label", "Wednesday"); map.put("y", 20); list.add(map);
+map = new HashMap<Object,Object>(); map.put("label", "Thursday"); map.put("y", 25); list.add(map);
+map = new HashMap<Object,Object>(); map.put("label", "Friday"); map.put("y", 20); list.add(map);
+map = new HashMap<Object,Object>(); map.put("label", "Saturday"); map.put("y", 20); list.add(map);
+ 
+String dataPoints2 = gsonObj.toJson(list);
+ 
+list = new ArrayList<Map<Object,Object>>();
+map = new HashMap<Object,Object>(); map.put("label", "Sunday"); map.put("y", 0); list.add(map);
+map = new HashMap<Object,Object>(); map.put("label", "Monday"); map.put("y", 25); list.add(map);
+map = new HashMap<Object,Object>(); map.put("label", "Tuesday"); map.put("y", 20); list.add(map);
+map = new HashMap<Object,Object>(); map.put("label", "Wednesday"); map.put("y", 25); list.add(map);
+map = new HashMap<Object,Object>(); map.put("label", "Thursday"); map.put("y", 45); list.add(map);
+map = new HashMap<Object,Object>(); map.put("label", "Friday"); map.put("y", 25); list.add(map);
+map = new HashMap<Object,Object>(); map.put("label", "Saturday"); map.put("y", 35); list.add(map);
+ 
+String dataPoints3 = gsonObj.toJson(list);
+%>
+ 
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+window.onload = function() { 
+ 
+var chart = new CanvasJS.Chart("chartContainer", {
+	theme: "light2",
+	title: {
+		text: "Fitness & Exercise"
+	},
+	subtitles: [{
+		text: "Weekly Scorecard"
+	}],
+	axisY: {
+		title: "Time in Minutes"
+	},
+	toolTip: {
+		shared: true,
+		reversed: true		
+	},
+	data: [{
+		type: "stackedColumn",
+		name: "Cardio",
+		showInLegend: true,
+		yValueFormatString: "#,##0 min",
+		dataPoints: <%out.print(dataPoints1);%>
+	},
+	{
+		type: "stackedColumn",
+		name: "Weight Training",
+		showInLegend: true,
+		yValueFormatString: "#,##0 min",
+		dataPoints: <%out.print(dataPoints2);%> 
+	},
+	{
+		type: "stackedColumn",
+		name: "Cycling",
+		showInLegend: true,
+		yValueFormatString: "#,##0 min",
+		dataPoints: <%out.print(dataPoints3);%> 
+	}]
+});
+chart.render();
+ 
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>        
+
+text box for inputting persons weight and height to get their BMI and body fat percentage
+<!-- <form action="sample.jsp" method="POST">
+      <input type="text" id="firstname" name="firstname" />
+      <input type="submit" value="Submit" />
+    </form> -->
+    
+    
+    
+                           --%>

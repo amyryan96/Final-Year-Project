@@ -1,14 +1,10 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
-
-
 <!Doctype html>
 <html>
 <style>
 body {
 	background-image:
 		/* url(https://s3.envato.com/files/243754334/primag.jpg); */
-		url("images/gym.jpg"); 
+		url("images/gym3.jpg"); 
 	background-repeat : no-repeat;
 	background-size: cover;
 	width: 100%;
@@ -79,56 +75,48 @@ body {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
-
-	<div role="navigation">
+<div role="navigation">
 		<div class="navbar navbar-inverse">
-		<a href="/welcome" class="navbar-brand">Gym HomePage</a>
+	<!-- 	<a href="/welcome" class="navbar-brand">Gym HomePage</a> -->
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li><a href="/bookClass">Book a Gym Class</a></li>
 					<li><a href="/foodDiary">Log Your Food for the day</a></li>
-					<li><a href="/viewFoodLogs">View Previous Food Diary Logs</a></li>
-					<div align = "left">
-					<li><form form class="form-horizontal" method="post" action="logoutMember">
-				<input type="submit" class="btn btn-warning" value="Logout" name="logoutMember" />
-				</form></li>
-				</div>
+					<li><a href="/payment">Membership Renewal</a></li>
 				</ul>
 			</div>
 		</div>
 		</div>
+	<div class="container">
+		<!---heading---->
+		<header class="heading"> Welcome ${sessionScope.member.name} To Your Membership Renewal </header>
 		<hr></hr>
-		<div class = "table-responsive">
-		<table class="table table-striped table-bordered">
-		<thead>
-		<tr>
-		<th>Date</th>
-		<th>Food Eaten That Day</th>
-		<th>Calories</th>
-		</tr>
-		</thead>
-		<tbody>
-		
-	<sql:setDataSource var="con" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/fyp_db1" user="root" password="root" /> <!-- Connects to database -->
-	<sql:query dataSource="${con }" sql="select * from foodDiary" var="diaries" /> <!-- Select statement for class in selected database  -->
-		
-		<div align = "center">
-		
-		<c:forEach var="foodDiary" items="${diaries}">
-		<tr>
-		<td>Date: <c:out value="${foodDiary.date}" /></td>
-		<td>Day of the week: <c:out value= "${foodDiary.dayOfWeek}" /></td>
-		<td>Food Type: <c:out value="${foodDiary.foodType}" /></td>
-		<td>Calories: <c:out value="${foodDiary.calories}" /></td>
-		</tr>
-		</c:forEach>
-		</div>
-		</tbody>
-		</table>
-		</div>
 
 
-	
+		<form action="/purchase" method="POST">
+		
+		<br/><h3 style="font-family: Roboto, sans-serif; color: white; font-weight: bold;">Choose Membership type <br/></h3>
+			<input type="radio" name="memberType1" value="adult"> <span>Adult Membership</span><br>
+			<input type="radio" name="memberType2" value="student"> <span>Student Membership</span><br> 
+			<input type="radio" name="memberType3" value="child"><span>Under 18's</span>
+
+			<h3 style="font-family: Roboto, sans-serif; color: white; font-weight: bold;">
+			Choose the membership length</h3>
+		<input type="radio" name="memlength1" value="month"><span>One Month</span><br>
+		<input type="radio" name="memlength2" value="three"><span> Three Months</span><br> 
+		<input type="radio" name="memlength3" value="year"><span>One Year</span><br>
+		<br/>
+			<script src="https://checkout.stripe.com/checkout.js"
+				class="stripe-button" data-key="pk_test_ARH638kxPC6MUhAmjSYMQf19008FMKa5w5"
+				data-amount=data-name= "your site name"
+				data-description="Membership Renewal"
+				data-image="images/gym.jpg"
+				data-locale="auto" data-currency="eur">
+			</script>
+		
+		</form>
+		
+		
+	</div>
 </body>
 </html>

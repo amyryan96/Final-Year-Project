@@ -115,11 +115,11 @@ body {
 				<ul class="nav navbar-nav">
 					<li><a href="/bookClass">Book a Gym Class</a></li>
 					<li><a href="/foodDiary">Log Your Food for the day</a></li>
+					<li><a href="/viewFoodLogs">View Previous Food Diary Logs</a></li>
 					<div align = "left">
 					<li><form form class="form-horizontal" method="post" action="logoutMember">
 				<input type="submit" class="btn btn-warning" value="Logout" name="logoutMember" />
 				</form></li>
-				<li><a href="/viewFoodLogs">View Previous Food Diary Logs</a></li>
 				</div>
 				</ul>
 			</div>
@@ -129,7 +129,7 @@ body {
 		<!---heading---->
 		<header class="heading"> Welcome To Your Food Diary Log System </header>
 		<hr></hr>
-		<form class="form-horizontal" method="post" action="addFood">
+		<form class="form-horizontal" method="post" action="addfoodDiary">
 		<input type="hidden" name="Id" value="${foodDiary.diaryId}"> 
 								
 			<div class="col-sm-12">
@@ -170,6 +170,20 @@ body {
 					<input type="text" name="foodType" id="foodType"
 							placeholder="Enter The Food You Ate" class="form-control"
 							value="${foodDiary.foodType}" />
+					</div>
+				</div>
+			</div>
+			</div>
+			<div class="col-sm-12">
+				<div class="row">
+					<div class="col-xs-10">
+					<div align = "left">
+						<label class="ate">Enter The Amount of Calories </label>
+					</div>
+					<div class="col-xs-60">
+					<input type="text" name="calories" id="calories"
+							placeholder="Enter The Amount of Calories" class="form-control"
+							value="${foodDiary.calories}" />
 					</div>
 				</div>
 			</div>
