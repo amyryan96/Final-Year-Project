@@ -17,6 +17,7 @@ public class Employee {
 	private int empId;
 	private String name;
 	private String email;
+	private String password;
 	private int phone;
 
 	@OneToMany
@@ -27,14 +28,24 @@ public class Employee {
 
 	}
 
-	public Employee(int empId, String name, String email, int phone)
+	public Employee(int empId, String name, String email, String password, int phone)
 	{
 		this.empId = empId;
 		this.name = name;
 		this.email = email;
+		this.password = password;
 		this.phone = phone;
 	}
 
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	
 	public int getEmpId() {
 		return empId;
 	}

@@ -6,7 +6,7 @@
 <style>
 body {
 	background-image: /* url("images/gym2.jpg"); */
-	/* url(https://s3.envato.com/files/243754334/primag.jpg); */
+	
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
@@ -88,22 +88,35 @@ input[type="radio"]:checked + span
 </head>
 <body>
 <div role="navigation">
-		<div class="navbar navbar-inverse">
-		<a href="/welcome" class="navbar-brand">Gym HomePage</a>
-			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<li><a href="/bookClass">Book a Gym Class</a></li>
-					<li><a href="/foodDiary">Log Your Food for the day</a></li>
-					<li><a href="/viewFoodLogs">View Previous Food Diary Logs</a></li>
-					<div align = "left">
-					<li><form form class="form-horizontal" method="post" action="logoutMember">
-				<input type="submit" class="btn btn-warning" value="Logout" name="logoutMember" />
-				</form></li>
-				</div>
-				</ul>
-			</div>
-		</div>
-		</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Gym HomePage</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor03">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/bookClass" style= "font-size: 10px">Book A Gym Class<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/foodDiary" style= "font-size: 10px">Log Your Food<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/payment" style= "font-size: 10px">Membership Renewal<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/viewFoodLogs" style= "font-size: 10px">View Previous Food Logs<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" method="post" action="logoutMember" style= "font-size: 10px">Logout<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+   
+  </div>
+</nav>
+</div> 
+
 	
 	<sql:setDataSource var="con" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/fyp_db1" user="root" password="root" /> <!-- Connects to database -->
 	<sql:query dataSource="${con }" sql="select * from class_details" var="classes" /> <!-- Select statement for class in selected database  -->

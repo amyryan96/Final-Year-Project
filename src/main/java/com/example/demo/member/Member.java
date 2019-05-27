@@ -22,6 +22,8 @@ public class Member {
 	private String email;
 	private String phoneNum;
 	private String password;
+	private String gender;
+
 
 	@ManyToMany(cascade = CascadeType.ALL)
 	private Set<ClassDetails> booking = new HashSet<>();
@@ -54,13 +56,22 @@ public class Member {
 	}
 
 
-	public Member(int Memberid, String name, String email, String phoneNum, String password) {
+	public Member(int Memberid, String name, String email, String phoneNum, String password, String gender) {
 
 		this.Memberid = Memberid;
 		this.name = name;
 		this.email = email;
 		this.phoneNum = phoneNum;
 		this.password = password;
+		this.gender = gender;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
 

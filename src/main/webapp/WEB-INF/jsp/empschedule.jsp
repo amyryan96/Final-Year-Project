@@ -2,7 +2,7 @@
 <html>
 <style>
 body {
-	background-image: url("images/gym2.jpg"); /* url(https://s3.envato.com/files/243754334/primag.jpg); */
+	background-image: url("images/gym.jpg"); /* url(https://s3.envato.com/files/243754334/primag.jpg); */
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
@@ -67,9 +67,10 @@ body {
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
 <script
-	src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-<script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
 <meta charset="UTF-8">
 <title>Successful Login</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -77,28 +78,50 @@ body {
 <body>
 
 <div role="navigation">
-		<div class="navbar navbar-inverse">
-		<a href="/welcome" class="navbar-brand">Your schedule page </a>
-			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<li><a href="/addClass">Create a Gym Class</a></li>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Gym HomePage</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-				</ul>
-			</div>
-		</div>
-		</div>
-
+  <div class="collapse navbar-collapse" id="navbarColor03">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/addClass" style= "font-size: 10px">Create A Gym Class<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/foodDiary" style= "font-size: 10px">Log Your Food<span class="sr-only">(current)</span></a>
+      </li>
+   	<li class="nav-item">
+        <a class="nav-link" href="/empschedule" style= "font-size: 10px">View Your Work Schedule<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" method="post" action="logoutMember" style= "font-size: 10px">Logout<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+   
+  </div>
+</nav>
+</div> 
 	<div class="container">
 		<!---heading---->
-		<header class="heading"> Welcome ${sessionScope.member.name} to your Work Schedule Page  </header>
+		<header class="heading"> Welcome ${sessionScope.employee.name} to your Work Schedule Page  </header>
 		<hr></hr>
 
 
 			</div>
 
-			<form form class="form-horizontal" method="post" action="logoutMember">
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- <form form class="form-horizontal" method="post" action="logoutMember">
 				<input type="submit" class="btn btn-warning" value="Logout" name="logoutMember" />
-				</form>
+				</form> -->
 
 
 </body>

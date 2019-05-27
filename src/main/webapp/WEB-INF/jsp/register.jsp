@@ -3,7 +3,7 @@
 <html>
 <style>
 body {
-	background-image: url("images/gym.jpg"); /* url(https://s3.envato.com/files/243754334/primag.jpg); */
+	background-image: url("images/gym.jpg"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
@@ -138,9 +138,10 @@ body {
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
 <script
-	src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-<script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
 <meta charset="UTF-8">
 <title>Registration Form</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -150,7 +151,7 @@ body {
 		<!---heading---->
 		<header class="heading"> Register for Your Gym Membership </header>
 		<hr></hr>
-		<!---Form starting---->
+		<%-- <!---Form starting---->
 		<div class="row ">
 			<!--- For Name---->
 			<div class="col-sm-12">
@@ -237,10 +238,63 @@ body {
 					<input type="submit" class="btn btn-warning" value="Register" />
 				</div>
 			</div>
-		</div>
-
-
-	</div>
-	</form>
+		</div> --%>
+<fieldset>
+<h3 style="font-family: Roboto, sans-serif; color: white; font-size: 25px; font-weight: bold;"> Employee Register </h3>
+ <form class="form-horizontal" method="POST" action="addEmployee"> 
+<div class="form-group">    
+      <input type="hidden" class="form-control" name = "Id" value="${employee.Id}" />
+      <label for="firstname" style="color: white; font-size: 20px; font-weight: bold;">Enter Name</label>
+       <input type="text" class="form-control" id="fname" name = "name" aria-describedby="emailHelp" placeholder="Enter Your Name" value ="${employee.name}"/>
+    </div>
+    <div class="form-group">
+      <label for="mail" style="color: white; font-size: 20px; font-weight: bold;">Enter Email Address</label>
+      <input type="email" class="form-control" id="email" name = "email" aria-describedby="emailHelp" placeholder="Enter Your Email" value ="${employee.email}"/>
+      <small id="emailHelp" class="form-text text-muted" style="color: white; font-size: 12px; font-weight: bold;">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="password" style="color: white; font-size: 20px; font-weight: bold;">Enter Password</label>
+      <input type="password" class="form-control" id="password" name = "password" placeholder="Enter Your Password" value="${employee.password}" />
+    </div>
+    <div class="form-group">
+      <label for="phoneNum" style="color: white; font-size: 20px; font-weight: bold;">Enter Phone Number</label>
+      <input type="phone" class="form-control" id="phoneNum" name = "phoneNum" placeholder="Enter Your Password" value="${employee.phone}" />
+    </div>
+    <button type="button" class="btn btn-secondary">Submit</button>
+    </form>
+    </fieldset>
+	
+		
+		
+<fieldset>
+<h3 style="font-family: Roboto, sans-serif; color: white; font-size: 25px; font-weight: bold;"> Member Register </h3>
+ <form class="form-horizontal" method="POST" action="addMember"> 
+<div class="form-group">    
+      <input type="hidden" class="form-control" name = "Id" value="${member.Id}" />
+      <label for="firstname" style="color: white; font-size: 20px; font-weight: bold;">Enter Name</label>
+       <input type="text" class="form-control" id="fname" name = "name" aria-describedby="emailHelp" placeholder="Enter Your Name" value ="${member.name}"/>
+    </div>
+    <div class="form-group">
+      <label for="mail" style="color: white; font-size: 20px; font-weight: bold;">Enter Email Address</label>
+      <input type="email" class="form-control" id="email" name = "email" aria-describedby="emailHelp" placeholder="Enter Your Email" value ="${member.email}"/>
+      <small id="emailHelp" class="form-text text-muted" style="color: white; font-size: 12px; font-weight: bold;">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="password" style="color: white; font-size: 20px; font-weight: bold;">Enter Password</label>
+      <input type="password" class="form-control" id="password" name = "password" placeholder="Enter Your Password" value="${member.password}" />
+    </div>
+    <div class="form-group">
+      <label for="phoneNum" style="color: white; font-size: 20px; font-weight: bold;">Enter Phone Number</label>
+      <input type="phoneNum" class="form-control" id="phoneNum" name = "phoneNum" placeholder="Enter Your Password" value="${member.phoneNum}" />
+    </div>
+    <div class="form-group">
+      <label for="gender" style="color: white; font-size: 20px; font-weight: bold;">Gender</label>
+      <input type="radio" class="form-control" id="gender" name = "male" placeholder="Enter Your Password" value="${member.gender}"> Male </input>
+       <input type="radio" class="form-control" id="gender" name = "female" placeholder="Enter Your Password" value="${member.gender}"> Female </input>
+    </div>
+    <button type="button" class="btn btn-secondary">Submit</button>
+    </form>
+    </fieldset>
+	
 </body>
 </html>

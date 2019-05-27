@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.demo.member.Employee;
+import com.example.demo.member.EmployeeService;
 import com.example.demo.member.Member;
 import com.example.demo.member.MemberService;
 
@@ -29,6 +31,8 @@ public class ApplicationController {
 	private MemberService memberSer;
 
 	private foodDiaryService foodSer;
+	
+	private EmployeeService empSer;
 
 	@RequestMapping("/")
 	public String welcome(HttpServletRequest request) {
@@ -45,6 +49,13 @@ public class ApplicationController {
 	public String registerMember(@ModelAttribute Member mem, BindingResult bindingresult, HttpServletRequest request) {
 
 		memberSer.addMember(mem);
+		return "regsuccess";
+	}
+	
+	@PostMapping("/addEmployee")
+	public String registerEmployee(@ModelAttribute Employee emp, BindingResult bindingresult, HttpServletRequest request)
+	{
+		empSer.addEmployee(emp);
 		return "regsuccess";
 	}
 
@@ -74,6 +85,26 @@ public class ApplicationController {
 			return "failure";
 		}
 	}
+	
+	@RequestMapping("/loginEmployee")
+	public String loginEmployee(@ModelAttribute Employee emp, HttpServletRequest request)
+	{
+	String email = emp.getEmail();
+	String password = emp.getPassword();
+	if(empSer.findByEmailAndPassword(email, password)!=null)
+	{
+	emp = empSer.findByEmailAndPassword(email, password);
+	HttpSession session = request.getSession();
+	session.setAttribute("employee", emp);
+	return "adminSuccess";
+	}
+	else {
+	return "failure";
+	}
+	}
+
+
+
 
 	@RequestMapping("/logoutMember")
 	public String logoutMember(HttpServletRequest request) {

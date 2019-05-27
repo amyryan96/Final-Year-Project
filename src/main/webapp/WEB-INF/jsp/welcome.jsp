@@ -68,9 +68,9 @@ body {
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
 <script
-	src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-<script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <meta charset="UTF-8">
 <title>Welcome</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -90,6 +90,11 @@ body {
 				<a href="/login"
 					style="font-family: Roboto, sans-serif; color: white; font-size: 25px; font-weight: bold;">Login</a>
 			</div>
+		</form>
+		
+		<form class="form-horizontal" method="post" action="nutrition">
+
+			<input type = "submit" value = "Sumit"/>
 		</form>
 		
 	</div>
