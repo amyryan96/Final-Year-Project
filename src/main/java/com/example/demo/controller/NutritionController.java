@@ -1,72 +1,82 @@
 package com.example.demo.controller;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpUriRequest;
-import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.client.RestTemplate;
 
+import com.example.demo.member.RecipeItem;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 @Controller
 public class NutritionController {
 
-	final String endpoint = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?timeFrame=day&targetCalories=2000&diet=vegetarian&exclude=shellfish%2C+olives";
-	static String apikey = "00638cedeamsh424fbb1650e1886p1d9bb5jsnd4d86e6da725";
-	static String host = "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com";
-	
 	@RequestMapping("/nutrition")
-	public String Nutrition(HttpServletRequest request, HttpSession session){
-		//String var = "Chocolate";
-		CloseableHttpClient client = HttpClientBuilder.create().build();
-		//HttpEntity entity = MultipartEntityBuilder.create().addTextBody("title", var).build();
-		
-		//RestTemplate restTemplate = new RestTemplate();
-		//HttpHeaders headers = new HttpHeaders();
-		//restTemplate.getForObject(endpoint, String.class);
-		//headers.set("X-RapidAPI-Key", "00638cedeamsh424fbb1650e1886p1d9bb5jsnd4d86e6da725");
-		//headers.set("X-RapidAPI-Host", "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com");
-		//headers.set("RapidAPI Project", "default-application_3774304");
-		//headers.set("Content-Type", "application/json");
-		HttpPost httpPost = new HttpPost(endpoint);
-		httpPost.setHeader("X-RapidAPI-Host", host);
-		httpPost.setHeader("X-RapidAPI-Key", apikey);
-		httpPost.setHeader("Content-Type", "application/json");
-		//httpPost.setEntity(entity);
-		
-		try
-		{
-			HttpResponse response = client.execute(httpPost);
+	public String nutrition(HttpServletRequest request) {
+		String querySearch = request.getParameter("searchQ");
+		String URL = "https://www.food2fork.com/api/search?key=74e740f9174b7814f02c0912352fa273&q=" + querySearch;
+		HttpPost httpPost = new HttpPost(URL);
+		CloseableHttpClient httpClient = HttpClientBuilder.create().build();
+		ArrayList<RecipeItem> ritems = new ArrayList<RecipeItem>();
+
+		try {
+
+			HttpResponse response = httpClient.execute(httpPost);
 			InputStream stream = response.getEntity().getContent();
 			String json = new Scanner(stream).useDelimiter("\\A").next();
 			JsonParser parser = new JsonParser();
 			Object obj = parser.parse(json);
 			JsonObject jo = (JsonObject) obj;
-			System.out.println(json);
-			//JsonObject jo = new JsonParser().parse(json).getAsJsonObject();
-			//JsonObject calories = (JsonObject) jo.get("calories");
-			String calval = jo.getAsJsonObject("id").get("title").getAsString();
-			System.out.println(calval);
-		}
-		catch(Exception e)
-		{
+
+			JsonArray recipes = (JsonArray) jo.get("recipes");
+			for (int i = 0; i < recipes.size(); i++) {
+				JsonObject recipeob = (JsonObject) recipes.get(i);
+				String publisher = recipeob.get("publisher").getAsString();
+				//System.out.println(publisher);
+
+				String title = recipeob.get("title").getAsString();
+				//System.out.println(title);
+
+				String srcurl = recipeob.get("source_url").getAsString();
+				//System.out.println(srcurl);
+
+				String image = recipeob.get("image_url").getAsString();
+				//System.out.println(image);
+
+				String recipeid = recipeob.get("recipe_id").getAsString();
+				//System.out.println(recipeid);
+
+				RecipeItem item = new RecipeItem();
+				item.setPublisher(publisher);
+				item.setTitle(title);
+				item.setSrcurl(srcurl);
+				item.setImage(image);
+				item.setRecipeid(recipeid);
+				ritems.add(item);
+
+			}
+			HttpSession session = request.getSession();
+			session.setAttribute("recipelist", ritems);
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "welcome";
+		return "recipes";
+
 	}
+
 	
-	
+
+
 }

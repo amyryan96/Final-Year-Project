@@ -2,7 +2,7 @@
 <html>
 <style>
 body {
-background-image: url("images/gym.jpg"); 
+background-image: /* url("images/gym.jpg");  */
 background-repeat: no-repeat;
 background-size: cover;
 width: 100%;
@@ -13,7 +13,7 @@ overflow: auto;
 .container {
 font-family: Roboto, sans-serif;
 background-image:
-url("images/light-grey-background.jpg");
+/* url("images/light-grey-background.jpg"); */
 
 border-style: 1px solid grey;
 margin: 0 auto;
@@ -63,14 +63,14 @@ ease-in-out, box-shadow 1.15s ease-in-out;
 } */
 </style>
 <head>
+<link href=static/css/lux/bootstrap.min.css rel="stylesheet">
 <link
-href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
-rel="stylesheet" id="bootstrap-css">
+	href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
 <script
-src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
-src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-
+	src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <meta charset="UTF-8">
 <title>Successful Login</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -97,7 +97,9 @@ src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
         <a class="nav-link" href="/empschedule" style= "font-size: 10px">View Your Work Schedule<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" method="post" action="logoutMember" style= "font-size: 10px">Logout<span class="sr-only">(current)</span></a>
+        <form form class="form-horizontal" method="post" action="logoutEmployee">
+		<input type="submit" class="btn btn-warning" value="Logout" name="logoutEmployee" />
+		</form>
       </li>
     </ul>
    
@@ -108,7 +110,7 @@ src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <!---heading---->
 <header class="heading"> Welcome ${sessionScope.employee.name} to your homepage  </header>
 <hr></hr>
-<div align="center">
+<div align="centre">
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -120,7 +122,7 @@ src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <img src= "images/gym3.jpg" alt="Gym"  width="600" height="300">
+      <img src= "images/gym3.jpg" alt="Gym">
       <div class="carousel-caption">
         <h3>Every</h3>
         <p>Workout</p>
@@ -129,16 +131,20 @@ src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     </div>
 
     <div class="item">
-      <img src="images/gym4.jpg" alt="Gym">
+      <img src="images/gym2.jpg" alt="Gym">
+      <div class="carousel-caption">
       <h3>Decide</h3>
         <p>Commit</p>
         <p>Succeed </p>
     </div>
+    </div>
 
     <div class="item">
       <img src="images/gym5.jpg" alt="Gym">
+      <div class="carousel-caption">
       <h3>Train Insane</h3>
         <p>Or Remain The Same</p>
+    </div>
     </div>
   </div>
 
@@ -156,6 +162,7 @@ src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 </div>
 
 
+
  </div>
  
  <!-- <div align="centre">
@@ -167,8 +174,6 @@ style="font-family: Roboto, sans-serif; color: black; font-size: 25px; font-weig
 </div>
 
  -->
-<!-- <form form class="form-horizontal" method="post" action="logoutMember">
-<input type="submit" class="btn btn-warning" value="Logout" name="logoutMember" />
-</form> -->
+
 </body>
 </html>

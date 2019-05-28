@@ -5,8 +5,8 @@
 <style>
 body {
 background-image:
-/* url(https://s3.envato.com/files/243754334/primag.jpg); */
-url("images/gym2.jpg"); 
+
+url("images/gym.jpg"); 
 background-repeat : no-repeat;
 background-size: cover;
 width: 100%;
@@ -125,8 +125,7 @@ src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <input type="radio" name="memberType2" value="student"> <span>Student Membership</span><br> 
 <input type="radio" name="memberType3" value="child"><span>Under 18's</span>
 
-<h3 style="font-family: Roboto, sans-serif; color: black; font-weight: bold;">
-Choose the membership length</h3>
+<h3 style="font-family: Roboto, sans-serif; color: black; font-weight: bold;">Choose the membership length</h3>
 <input type="radio" name="memlength1" value="month"><span>One Month</span><br>
 <input type="radio" name="memlength2" value="three"><span> Three Months</span><br> 
 <input type="radio" name="memlength3" value="year"><span>One Year</span><br>

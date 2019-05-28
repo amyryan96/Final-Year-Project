@@ -5,7 +5,7 @@
 <html>
 <style>
 body {
-	background-image: /* url("images/gym2.jpg"); */
+	background-image: /* url("images/gym.jpg"); */
 	
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -79,9 +79,10 @@ input[type="radio"]:checked + span
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
 <script
-	src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-<script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
 <meta charset="UTF-8">
 <title>Successful Login</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">

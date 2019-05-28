@@ -31,7 +31,7 @@ public class ApplicationController {
 	private MemberService memberSer;
 
 	private foodDiaryService foodSer;
-	
+	@Autowired
 	private EmployeeService empSer;
 
 	@RequestMapping("/")
@@ -56,7 +56,7 @@ public class ApplicationController {
 	public String registerEmployee(@ModelAttribute Employee emp, BindingResult bindingresult, HttpServletRequest request)
 	{
 		empSer.addEmployee(emp);
-		return "regsuccess";
+		return "empregsuccess";
 	}
 
 	@RequestMapping("/login")
@@ -71,19 +71,17 @@ public class ApplicationController {
 		String email = mem.getEmail();
 		String password = mem.getPassword();
 		String name = mem.getName();
-		if (memberSer.findByEmailAndPassword(email, password) != null) {
+		if (memberSer.findByEmailAndPassword(email, password) != null)
+		{
 			mem = memberSer.findByEmailAndPassword(email, password);
 			HttpSession session = request.getSession();
 			session.setAttribute("member", mem);
-			if (request.getParameter("email").equalsIgnoreCase("admin@gmail.com")) {
-				return "adminSuccess";
-			} else {
-				return "success";
-			}
-		} else {
-
-			return "failure";
+			return "success";
 		}
+		 else {
+
+			 	return "failure";
+		 	}
 	}
 	
 	@RequestMapping("/loginEmployee")
@@ -93,14 +91,15 @@ public class ApplicationController {
 	String password = emp.getPassword();
 	if(empSer.findByEmailAndPassword(email, password)!=null)
 	{
-	emp = empSer.findByEmailAndPassword(email, password);
-	HttpSession session = request.getSession();
-	session.setAttribute("employee", emp);
-	return "adminSuccess";
+		emp = empSer.findByEmailAndPassword(email, password);
+		HttpSession session = request.getSession();
+		session.setAttribute("employee", emp);
+		return "adminSuccess";
 	}
-	else {
-	return "failure";
-	}
+		else {
+				return "failure";
+			}
+	
 	}
 
 
@@ -108,6 +107,14 @@ public class ApplicationController {
 
 	@RequestMapping("/logoutMember")
 	public String logoutMember(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		session.invalidate();
+		return "welcome";
+
+	}
+	
+	@RequestMapping("/logoutEmployee")
+	public String logoutEmployee(HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		session.invalidate();
 		return "welcome";

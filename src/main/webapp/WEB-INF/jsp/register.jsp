@@ -151,12 +151,13 @@ body {
 		<!---heading---->
 		<header class="heading"> Register for Your Gym Membership </header>
 		<hr></hr>
-		<%-- <!---Form starting---->
+		 <!---Form starting---->
 		<div class="row ">
 			<!--- For Name---->
 			<div class="col-sm-12">
 				<div class="row">
 					<div class="col-xs-4">
+					<h3 style="font-family: Roboto, sans-serif; color: white; font-size: 25px; font-weight: bold;">Register Member</h3>
 						<form class="form-horizontal" method="POST" action="addMember">
 						
 							<input type="hidden" name="Id" value="${member.Id}"> 
@@ -171,7 +172,7 @@ body {
 					</div>
 				</div>
 			</div>
-
+	<!-----For email---->
 			<div class="col-sm-12">
 				<div class="row">
 					<div class="col-xs-4" align = "left">
@@ -186,7 +187,7 @@ body {
 					</div>
 				</div>
 			</div>
-	<!-----For email---->
+	<!-----For phone---->
 			<div class="col-sm-12">
 				<div class="row">
 					<div class="col-xs-4">
@@ -202,7 +203,7 @@ body {
 					</div>
 				</div>
 			</div>
-	<!-----For Password and confirm password---->
+	<!-----For Password ---->
 			<div class="col-sm-12">
 				<div class="row">
 					<div class="col-xs-4">
@@ -224,13 +225,13 @@ body {
 					<div class="col-xs-4 ">
 						<label class="gender">Gender </label>
 					</div>
-
+	
 					<div class="col-xs-4 male">
-						<input type="radio" name="gender" id="gender" value="boy">Male</input>
+						<input type="radio" name="male" id="gender" value="${member.gender}">Male</input>
 					</div>
 
 					<div class="col-xs-4 female">
-						<input type="radio" name="gender" id="gender" value="girl">Female</input>
+						<input type="radio" name="female" id="gender" value="${member.gender}">Female</input>
 					</div>
 
 				</div>
@@ -238,63 +239,84 @@ body {
 					<input type="submit" class="btn btn-warning" value="Register" />
 				</div>
 			</div>
-		</div> --%>
-<fieldset>
-<h3 style="font-family: Roboto, sans-serif; color: white; font-size: 25px; font-weight: bold;"> Employee Register </h3>
- <form class="form-horizontal" method="POST" action="addEmployee"> 
-<div class="form-group">    
-      <input type="hidden" class="form-control" name = "Id" value="${employee.Id}" />
-      <label for="firstname" style="color: white; font-size: 20px; font-weight: bold;">Enter Name</label>
-       <input type="text" class="form-control" id="fname" name = "name" aria-describedby="emailHelp" placeholder="Enter Your Name" value ="${employee.name}"/>
-    </div>
-    <div class="form-group">
-      <label for="mail" style="color: white; font-size: 20px; font-weight: bold;">Enter Email Address</label>
-      <input type="email" class="form-control" id="email" name = "email" aria-describedby="emailHelp" placeholder="Enter Your Email" value ="${employee.email}"/>
-      <small id="emailHelp" class="form-text text-muted" style="color: white; font-size: 12px; font-weight: bold;">We'll never share your email with anyone else.</small>
-    </div>
-    <div class="form-group">
-      <label for="password" style="color: white; font-size: 20px; font-weight: bold;">Enter Password</label>
-      <input type="password" class="form-control" id="password" name = "password" placeholder="Enter Your Password" value="${employee.password}" />
-    </div>
-    <div class="form-group">
-      <label for="phoneNum" style="color: white; font-size: 20px; font-weight: bold;">Enter Phone Number</label>
-      <input type="phone" class="form-control" id="phoneNum" name = "phoneNum" placeholder="Enter Your Password" value="${employee.phone}" />
-    </div>
-    <button type="button" class="btn btn-secondary">Submit</button>
-    </form>
-    </fieldset>
+			</form>
+		</div> 
 	
 		
-		
-<fieldset>
-<h3 style="font-family: Roboto, sans-serif; color: white; font-size: 25px; font-weight: bold;"> Member Register </h3>
- <form class="form-horizontal" method="POST" action="addMember"> 
-<div class="form-group">    
-      <input type="hidden" class="form-control" name = "Id" value="${member.Id}" />
-      <label for="firstname" style="color: white; font-size: 20px; font-weight: bold;">Enter Name</label>
-       <input type="text" class="form-control" id="fname" name = "name" aria-describedby="emailHelp" placeholder="Enter Your Name" value ="${member.name}"/>
-    </div>
-    <div class="form-group">
-      <label for="mail" style="color: white; font-size: 20px; font-weight: bold;">Enter Email Address</label>
-      <input type="email" class="form-control" id="email" name = "email" aria-describedby="emailHelp" placeholder="Enter Your Email" value ="${member.email}"/>
-      <small id="emailHelp" class="form-text text-muted" style="color: white; font-size: 12px; font-weight: bold;">We'll never share your email with anyone else.</small>
-    </div>
-    <div class="form-group">
-      <label for="password" style="color: white; font-size: 20px; font-weight: bold;">Enter Password</label>
-      <input type="password" class="form-control" id="password" name = "password" placeholder="Enter Your Password" value="${member.password}" />
-    </div>
-    <div class="form-group">
-      <label for="phoneNum" style="color: white; font-size: 20px; font-weight: bold;">Enter Phone Number</label>
-      <input type="phoneNum" class="form-control" id="phoneNum" name = "phoneNum" placeholder="Enter Your Password" value="${member.phoneNum}" />
-    </div>
-    <div class="form-group">
-      <label for="gender" style="color: white; font-size: 20px; font-weight: bold;">Gender</label>
-      <input type="radio" class="form-control" id="gender" name = "male" placeholder="Enter Your Password" value="${member.gender}"> Male </input>
-       <input type="radio" class="form-control" id="gender" name = "female" placeholder="Enter Your Password" value="${member.gender}"> Female </input>
-    </div>
-    <button type="button" class="btn btn-secondary">Submit</button>
-    </form>
-    </fieldset>
+<div class="row ">
+			<!--- For Name---->
+			<div class="col-sm-12">
+				<div class="row">
+					<div class="col-xs-4">
+					<h3 style="font-family: Roboto, sans-serif; color: white; font-size: 25px; font-weight: bold;">Register Employee</h3>
+						<form class="form-horizontal" method="POST" action="addEmployee">
+						
+							<input type="hidden" name="Id" value="${employee.Id}"> 
+								<div align = "left">
+							<label class="firstname">Enter Name </label>
+					</div>
+					</div>
+					<div class="col-xs-8">
+						<input type="text" name="name" id="fname"
+							placeholder="Enter Your Name" class="form-control "
+							value="${employee.name}" />
+					</div>
+				</div>
+			</div>
+	<!-----For email---->
+			<div class="col-sm-12">
+				<div class="row">
+					<div class="col-xs-4" align = "left">
+					
+						<label class="mail">Enter Email </label>
+					
+					</div>
+					<div class="col-xs-8">
+					<input type="email" name="email" id="email"
+							placeholder="Enter Your Email" class="form-control"
+							value="${employee.email}" />
+					</div>
+				</div>
+			</div>
+	<!-----For phone---->
+			<div class="col-sm-12">
+				<div class="row">
+					<div class="col-xs-4">
+					<div align = "left">
+						<label class="mail">Enter Your Phone Number </label>
+					</div>
+					</div>
+					<div class="col-xs-8">
+					&nbsp
+					<input type="phoneNum" name="phoneNum" id="phonenum"
+							placeholder="Enter Your Number" class="form-control"
+							value="${employee.phone}" />
+					</div>
+				</div>
+			</div>
+	<!-----For Password ---->
+			<div class="col-sm-12">
+				<div class="row">
+					<div class="col-xs-4">
+					<div align = "left">
+						<label class="pass">Enter Password </label>
+					</div>
+					</div>
+					<div class="col-xs-8">
+						<input type="password" name="password" id="password"
+							placeholder="Enter Your Password" class="form-control"
+							value="${employee.password}" />
+					</div>
+				</div>
+			</div>
+
+				</div>
+				<div class="col-sm-12">
+					<input type="submit" class="btn btn-warning" value="Register" />
+				</div>
+			
+			</form>
 	
+
 </body>
 </html>

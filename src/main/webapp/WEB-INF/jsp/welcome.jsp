@@ -92,10 +92,10 @@ body {
 			</div>
 		</form>
 		
-		<form class="form-horizontal" method="post" action="nutrition">
+		<!-- <form class="form-horizontal" method="post" action="nutrition">
 
 			<input type = "submit" value = "Sumit"/>
-		</form>
+		</form> -->
 		
 	</div>
 </body>

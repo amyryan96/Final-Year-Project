@@ -1,128 +1,160 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html>
-<style>
-body {
-	background-image: url("images/gym.jpg"); /* url(https://s3.envato.com/files/243754334/primag.jpg); */
-	background-repeat: no-repeat;
-	background-size: cover;
-	width: 100%;
-	height: 100vh;
-	overflow: auto;
-}
-/*-----for border----*/
-.container {
-	font-family: Roboto, sans-serif;
-	background-image:
-		url("images/light-grey-background.jpg");
-		
-	border-style: 1px solid grey;
-	margin: 0 auto;
-	text-align: center;
-	opacity: 0.8;
-	margin-top: 67px;
-	box-shadow: 2px 5px 5px 0px #eee;
-	max-width: 550px;
-	padding-top: 10px;
-	height: 425px;
-	margin-top: 166px;
-}
-/*---for heading-----*/
-.heading {
-	text-decoration: bold;
-	text-align: center;
-	font-size: 30px;
-	color: black;
-	font-weight: bold;
-	padding-top: 10px;
-}
-.pass {
-	color: white;
-	margin-top: 9px;
-	font-size: 14px;
-	font-family: sans-serif;
-	/* margin-left: 6px; */
-	
-}
-/*------------For submit button---------*/
-.sbutton {
-	color: white;
-	font-size: 20px;
-	border: 1px solid white;
-	background-color: #080808;
-	width: 32%;
-	margin-left: 41%;
-	margin-top: 16px;
-	box-shadow: 0px 2px 2px 0px white;
-}
-.btn.btn-warning:hover {
-	box-shadow: 2px 1px 2px 3px #808080;
-	background: #000000;
-	color: #fff;
-	transition: background-color 1.15s ease-in-out, border-color 1.15s
-		ease-in-out, box-shadow 1.15s ease-in-out;
-}
-</style>
 <head>
-<link
-	href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
-	rel="stylesheet" id="bootstrap-css">
-<script
-	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script
-	src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <meta charset="utf-8"/>
+    <title>Using JavaScript/HTML5 Scheduler in Spring Boot (Java)</title>
+    
+    <link href="icons/main.css" rel="stylesheet" type="text/css">
+    <link href="icons/style.css" rel="stylesheet" type="text/css">
 
-<meta charset="UTF-8">
-<title>Successful Login</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+<div class="header">
+    <h1><a href='https://code.daypilot.org/70997/using-javascript-html5-scheduler-in-spring-boot-java'>Using HTML5/JavaScript Scheduler in Spring Boot (Java)</a></h1>
+    <div><a href="https://javascript.daypilot.org/">DayPilot for JavaScript</a> - AJAX Calendar/Scheduling Widgets forJavaScript/HTML5/jQuery/AngularJS</div>
+</div>
 
-<div role="navigation">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Gym HomePage</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<div class="main">
+    <div id="dp"></div>
+</div>
 
-  <div class="collapse navbar-collapse" id="navbarColor03">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/addClass" style= "font-size: 10px">Create A Gym Class<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/foodDiary" style= "font-size: 10px">Log Your Food<span class="sr-only">(current)</span></a>
-      </li>
-   	<li class="nav-item">
-        <a class="nav-link" href="/empschedule" style= "font-size: 10px">View Your Work Schedule<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" method="post" action="logoutMember" style= "font-size: 10px">Logout<span class="sr-only">(current)</span></a>
-      </li>
-    </ul>
-   
-  </div>
-</nav>
-</div> 
-	<div class="container">
-		<!---heading---->
-		<header class="heading"> Welcome ${sessionScope.employee.name} to your Work Schedule Page  </header>
-		<hr></hr>
+<!-- DayPilot library -->
+<script src="js/daypilot/daypilot-all.min.js"></script>
+<!-- jQuery -->
+<script src="js/jquery/jquery-2.2.0.min.js"></script>
+
+<script>
+    var dp = new DayPilot.Scheduler("dp");
+    dp.eventHeight = 40;
+    dp.startDate = DayPilot.Date.today().firstDayOfMonth();
+    dp.days = DayPilot.Date.today().daysInMonth();
+    dp.scale = "Day";
+    dp.timeHeaders = [
+        {groupBy: "Month"},
+        {groupBy: "Day", format: "d"}
+    ];
+    dp.onTimeRangeSelected = function (args) {
+        DayPilot.Modal.prompt("Create a new event:", "Event").then(function (modal) {
+            var dp = args.control;
+            dp.clearSelection();
+            if (!modal.result) {
+                return;
+            }
+            var params = {
+                start: args.start.toString(),
+                end: args.end.toString(),
+                text: modal.result,
+                resource: args.resource
+            };
+            $.ajax({
+                type: 'POST',
+                url: '/api/events/create',
+                data: JSON.stringify(params),
+                success: function (data) {
+                    dp.events.add(new DayPilot.Event(data));
+                    dp.message("Event created");
+                },
+                contentType: "application/json",
+                dataType: 'json'
+            });
+        });
+    }
+    dp.onEventMove = function (args) {
+        var params = {
+            id: args.e.id(),
+            start: args.newStart.toString(),
+            end: args.newEnd.toString(),
+            resource: args.newResource
+        };
+        $.ajax({
+            type: 'POST',
+            url: '/api/events/move',
+            data: JSON.stringify(params),
+            success: function (data) {
+                dp.message("Event moved");
+            },
+            contentType: "application/json",
+            dataType: 'json'
+        });
+    };
+    dp.onEventResize = function (args) {
+        var params = {
+            id: args.e.id(),
+            start: args.newStart.toString(),
+            end: args.newEnd.toString(),
+            resource: args.e.resource()
+        };
+        $.ajax({
+            type: 'POST',
+            url: '/api/events/move',
+            data: JSON.stringify(params),
+            success: function (data) {
+                dp.message("Event resized");
+            },
+            contentType: "application/json",
+            dataType: 'json'
+        });
+    };
+    dp.onBeforeEventRender = function(args) {
+        args.data.barColor = args.data.color;
+        args.data.areas = [
+            { top: 6, right: 2, icon: "icon-triangle-down", visibility: "Hover", action: "ContextMenu", style: "font-size: 12px; background-color: #f9f9f9; border: 1px solid #ccc; padding: 2px 2px 0px 2px; cursor:pointer;"}
+        ];
+    };
+    dp.contextMenu = new DayPilot.Menu({
+        items: [
+            {
+                text: "Blue",
+                icon: "icon icon-blue",
+                color: "#1155cc",
+                onClick: function(args) { updateColor(args.source, args.item.color); }
+            },
+            {
+                text: "Green",
+                icon: "icon icon-green",
+                color: "#6aa84f",
+                onClick: function(args) { updateColor(args.source, args.item.color); }
+            },
+            {
+                text: "Yellow",
+                icon: "icon icon-yellow",
+                color: "#f1c232",
+                onClick: function(args) { updateColor(args.source, args.item.color); }
+            },
+            {
+                text: "Red",
+                icon: "icon icon-red",
+                color: "#cc0000",
+                onClick: function(args) { updateColor(args.source, args.item.color); }
+            },
+
+        ]
+    });
+    dp.init();
+
+    dp.rows.load("/api/resources");
+    dp.events.load("/api/events");
 
 
-			</div>
-
-			
-			
-			
-			
-			
-			
-			
-			
-			<!-- <form form class="form-horizontal" method="post" action="logoutMember">
-				<input type="submit" class="btn btn-warning" value="Logout" name="logoutMember" />
-				</form> -->
-
+    function updateColor(e, color) {
+        var params = {
+            id: e.id(),
+            color: color
+        };
+        $.ajax({
+            type: 'POST',
+            url: '/api/events/setColor',
+            data: JSON.stringify(params),
+            success: function (data) {
+                e.data.color = color;
+                dp.events.update(e);
+                dp.message("Color updated");
+            },
+            contentType: "application/json",
+            dataType: 'json'
+        });
+    }
+</script>
 
 </body>
-</html> 
+</html>

@@ -2,7 +2,7 @@
 <html>
 <style>
 body {
-	background-image: url("images/gym.jpg"); /* url(https://s3.envato.com/files/243754334/primag.jpg); */
+	background-image: url("images/gym.jpg"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
