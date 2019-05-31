@@ -88,7 +88,7 @@ ease-in-out, box-shadow 1.15s ease-in-out;
   <div class="collapse navbar-collapse" id="navbarColor03">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/addClass" style= "font-size: 10px">Create A Gym Class<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/createClass" style= "font-size: 10px">Create A Gym Class<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/foodDiary" style= "font-size: 10px">Log Your Food<span class="sr-only">(current)</span></a>

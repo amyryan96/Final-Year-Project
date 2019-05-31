@@ -75,6 +75,7 @@ input[type="radio"]:checked + span
 
 </style>
 <head>
+<link href=static/css/lux/bootstrap.min.css rel="stylesheet">
 <link
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
@@ -82,7 +83,6 @@ input[type="radio"]:checked + span
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
 	src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-
 <meta charset="UTF-8">
 <title>Successful Login</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -90,7 +90,7 @@ input[type="radio"]:checked + span
 <body>
 <div role="navigation">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Gym HomePage</a>
+  <a class="navbar-brand" href="/success">Gym HomePage</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

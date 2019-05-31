@@ -65,16 +65,16 @@ input[type="radio"]:checked + span
 }
 </style>
 <head>
+<link href=static/css/lux/bootstrap.min.css rel="stylesheet">
 <link
-href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
-rel="stylesheet" id="bootstrap-css">
+	href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
 <script
-src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
-src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-
+	src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <meta charset="UTF-8">
-<title>Successful Login</title>
+<title>Create a Gym Class</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>

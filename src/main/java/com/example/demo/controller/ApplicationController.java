@@ -30,6 +30,7 @@ public class ApplicationController {
 	@Autowired
 	private MemberService memberSer;
 
+	
 	private foodDiaryService foodSer;
 	@Autowired
 	private EmployeeService empSer;
@@ -127,14 +128,13 @@ public class ApplicationController {
 	}
 
 	@PostMapping("/addfoodDiary")
-	public String addfoodDiary(@ModelAttribute foodDiary food, BindingResult bindingresult,
-			HttpServletRequest request) {
+	public String addfoodDiary(@ModelAttribute foodDiary food, BindingResult bindingresult, HttpServletRequest request) {
 		foodSer.addFood(food);
 		return "foodDiary";
 	}
 
 	@GetMapping("/viewFoodLogs")
-	public String showFoodLogs(HttpServletRequest request) {
+	public String viewFoodLogs(@ModelAttribute foodDiary food, HttpServletRequest request) {
 		request.setAttribute("diaries", foodSer.viewFoodLogs());
 		return "viewFoodLogs";
 	}

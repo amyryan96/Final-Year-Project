@@ -1,5 +1,4 @@
 
-
 <!Doctype html>
 <html>
 <style>
@@ -30,7 +29,7 @@ margin-top: 67px;
 /* box-shadow: 2px 5px 5px 0px #eee; */
 max-width: 500px;
 padding-top: 10px;
-height: 400px;
+height: 450px;
 margin-top: 166px;
 }
 
@@ -69,14 +68,14 @@ input[type="radio"]:checked + span
 }
 </style>
 <head>
+<link href=static/css/lux/bootstrap.min.css rel="stylesheet">
 <link
-href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
-rel="stylesheet" id="bootstrap-css">
+	href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
 <script
-src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
-src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-
+	src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <meta charset="UTF-8">
 <title>Welcome</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">

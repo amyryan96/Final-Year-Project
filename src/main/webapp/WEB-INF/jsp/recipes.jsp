@@ -6,7 +6,7 @@
 <html>
 <style>
 body {
-	background-image:  url("images/gym.jpg"); 
+	background-image:  /* url("images/gym.jpg");  */
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
