@@ -4,7 +4,7 @@
 <style>
 body {
 	background-image:
-		/* url(https://s3.envato.com/files/243754334/primag.jpg); */
+		
 		url("images/gym.jpg"); 
 	background-repeat : no-repeat;
 	background-size: cover;
