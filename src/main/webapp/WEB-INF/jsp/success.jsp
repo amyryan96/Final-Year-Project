@@ -12,9 +12,9 @@ body {
 /*-----for border----*/
 .container {
 	font-family: Roboto, sans-serif;
-	background-image: /* url("images/light-grey-background.jpg"); */
+	/*background-image:  url("images/light-grey-background.jpg"); */
 
-	/* border-style: 1px solid grey;
+	/*  	border-style: 1px solid grey;
 margin: 0 auto;
 text-align: center;
 opacity: 0.8;
@@ -23,7 +23,7 @@ box-shadow: 2px 5px 5px 0px #eee;
 max-width: 550px;
 padding-top: 10px;
 height: 425px;
-margin-top: 166px; */
+margin-top: 166px;  */
 }
 /*---for heading-----*/
 .heading {
@@ -93,6 +93,15 @@ margin-top: 166px; */
 					<li class="nav-item"><a class="nav-link" href="/progress"
 						style="font-size: 10px">Check Your Progress<span
 							class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/viewFoodLogs"
+						style="font-size: 10px">View Previous Food Logs<span
+							class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/recipes"
+						style="font-size: 10px">Search Recipes<span
+							class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/MyFirstSchedule"
+						style="font-size: 10px">Test<span
+							class="sr-only">(current)</span></a></li>
 					<li class="nav-item">
 						<form form class="form-horizontal" method="post"
 							action="logoutMember">
@@ -105,7 +114,10 @@ margin-top: 166px; */
 			</div>
 		</nav>
 	</div>
-
+<div id="calendar" style="position: absolute; width: 100%; height: 100%;"></div>
+			
+<script src="MindFusion.Scheduling.js" type="text/javascript"></script>
+<script src="MyFirstSchedule.js" type="text/javascript"></script>
 
 	<div class="container">
 		<!---heading---->

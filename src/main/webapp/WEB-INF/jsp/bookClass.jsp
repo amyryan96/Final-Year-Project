@@ -110,8 +110,9 @@ input[type="radio"]:checked + span
         <a class="nav-link" href="/viewFoodLogs" style= "font-size: 10px">View Previous Food Logs<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" method="post" action="logoutMember" style= "font-size: 10px">Logout<span class="sr-only">(current)</span></a>
-      </li>
+      <form form class="form-horizontal" method="post" action="logoutMember">
+		<input type="submit" class="btn btn-outline-primary" value="Logout" name="logoutMember" />
+	</form></li>
     </ul>
    
   </div>

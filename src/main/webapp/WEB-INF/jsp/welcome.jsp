@@ -18,9 +18,6 @@ body {
 .container {
 	font-family: Roboto, sans-serif;
 	background-image:
-	/* url("images/plain-black-backgorund.jpg"); */
-		/* url(https://image.freepik.com/free-vector/dark-blue-blurred-background_1034-589.jpg); */
-	
 	border-style: 1px solid grey;
 	margin: 0 auto;
 	text-align: center;
@@ -92,10 +89,6 @@ body {
 			</div>
 		</form>
 		
-		<!-- <form class="form-horizontal" method="post" action="nutrition">
-
-			<input type = "submit" value = "Sumit"/>
-		</form> -->
 		
 	</div>
 </body>

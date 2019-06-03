@@ -12,17 +12,17 @@ body {
 
 /*-----for border----*/
 .container {
-	font-family: Roboto, sans-serif;
-	background-image: url("images/light-grey-background.jpg");
+	/* font-family: Roboto, sans-serif; */
+	/* background-image: url("images/light-grey-background.jpg"); */
 	/* border-style: 1px solid grey; */
-	margin: 0 auto;
+	/* margin: 0 auto; */
 	text-align: center;
 	/* opacity: 0.8; */
-	margin-top: 90px;
+	/* margin-top: 90px; */
 	/* box-shadow: 2px 5px 5px 0px #eee; */
-	max-width: 650px;
-	padding-top: 15px;
-	height: 500px;
+	/* max-width: 600px; */
+	/* padding-top: 15px; */
+	height: 450px;
 	/* margin-top: 166px; */
 }
 
@@ -126,32 +126,21 @@ body {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<div role="navigation">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="#">Gym HomePage</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#navbarColor03" aria-controls="navbarColor03"
-				aria-expanded="false" aria-label="Toggle navigation">
+<div role="navigation">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a class="navbar-brand" href="/success">Gym HomePage</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-
-			<div class="collapse navbar-collapse" id="navbarColor03">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active"><a class="nav-link"
-						href="/bookClass" style="font-size: 10px">Book A Gym Class<span
-							class="sr-only">(current)</span></a></li>
-					<li class="nav-item"><a class="nav-link" href="/foodDiary"
-						style="font-size: 10px">Log Your Food<span class="sr-only">(current)</span></a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="/payment"
-						style="font-size: 10px">Membership Renewal<span
-							class="sr-only">(current)</span></a></li>
-					<li class="nav-item"><a class="nav-link" href="/viewFoodLogs"
-						style="font-size: 10px">View Previous Food Logs<span
-							class="sr-only">(current)</span></a></li>
-					<li class="nav-item"><a class="nav-link" method="post"
-						action="logoutMember" style="font-size: 10px">Logout<span
-							class="sr-only">(current)</span></a></li>
+	<div class="collapse navbar-collapse" id="navbarColor03">
+		<ul class="navbar-nav mr-auto">
+<li class="nav-item active"><a class="nav-link" href="/bookClass" style="font-size: 10px">Book A Gym Class<span class="sr-only">(current)</span></a></li>
+<li class="nav-item"><a class="nav-link" href="/foodDiary" style="font-size: 10px">Log Your Food<span class="sr-only">(current)</span></a></li>
+<li class="nav-item"><a class="nav-link" href="/payment" style="font-size: 10px">Membership Renewal<span class="sr-only">(current)</span></a></li>
+<li class="nav-item"><a class="nav-link" href="/viewFoodLogs" style="font-size: 10px">View Previous Food Logs<span class="sr-only">(current)</span></a></li>
+<li class="nav-item"><form form class="form-horizontal" method="post" action="logoutMember">
+<input type="submit" class="btn btn-outline-primary" value="Logout" name="logoutMember" />
+					</form></li>
 				</ul>
 
 			</div>
@@ -160,7 +149,7 @@ body {
 
 	<div class="container">
 		<!---heading---->
-		<header class="heading"> Welcome To Your Food Diary Log
+		<header class="heading" style="font-family: Roboto, sans-serif; color: white; font-size: 25px; font-weight: bold;"> Welcome To Your Food Diary Log
 			System </header>
 		<hr></hr>
 		<form class="form-horizontal" method="post" action="addFood">
@@ -170,7 +159,7 @@ body {
 				<div class="row">
 					<div class="col-xs-10">
 						<div align="left">
-							<label class="date">Enter Date </label>
+							<label class="date" style=" sans-serif; color: white;">Enter Date </label>
 						</div>
 						<div class="col-xs-60">
 							<input type="date" name="date" id="date"
@@ -184,12 +173,12 @@ body {
 				<div class="row">
 					<div class="col-xs-10">
 						<div align="left">
-							<label class="day">Enter The Day Of The Week </label>
+							<label class="time" style=" sans-serif; color: white;">Enter The Time of The Day </label>
 						</div>
 						<div class="col-xs-60">
-							<input type="text" name="dayofweek" id="dayofweek"
-								placeholder="Enter The Day Of The Week" class="form-control"
-								value="${foodDiary.dayOfWeek}" />
+							<input type="time" name="time" id="time"
+								placeholder="Enter The Time of The Day" class="form-control"
+								value="${foodDiary.timeOfDay}" />
 						</div>
 					</div>
 				</div>
@@ -198,7 +187,7 @@ body {
 				<div class="row">
 					<div class="col-xs-10">
 						<div align="left">
-							<label class="ate">Enter The Food You Ate </label>
+							<label class="ate" style=" sans-serif; color: white;">Enter The Food You Ate </label>
 						</div>
 						<div class="col-xs-60">
 							<input type="text" name="foodType" id="foodType"
@@ -212,7 +201,7 @@ body {
 				<div class="row">
 					<div class="col-xs-10">
 						<div align="left">
-							<label class="ate">Enter The Amount of Calories </label>
+							<label class="cals" style=" sans-serif; color: white;">Enter The Amount of Calories </label>
 						</div>
 						<div class="col-xs-60">
 							<input type="text" name="calories" id="calories"
@@ -229,12 +218,12 @@ body {
 			</div>
 		</form>
 		
-		&nbsp
-		&nbsp
+<!-- 
 		<h4 style="font-family: Roboto, sans-serif; color: white; font-size: 25px; font-weight: bold;">Search Recipes</h4>
 		<form class = "form-horizontal" method="post" action="nutrition">
 			<input type = "text" name="searchQ"/>
 			<input type ="submit" value ="submit"/>
 		</form>
+		 -->
 </body>
 </html>

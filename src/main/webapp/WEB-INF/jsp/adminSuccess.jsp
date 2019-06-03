@@ -80,7 +80,7 @@ ease-in-out, box-shadow 1.15s ease-in-out;
 
 <div role="navigation">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Gym HomePage</a>
+  <a class="navbar-brand" href="/adminSuccess">Gym HomePage</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -90,9 +90,9 @@ ease-in-out, box-shadow 1.15s ease-in-out;
       <li class="nav-item active">
         <a class="nav-link" href="/createClass" style= "font-size: 10px">Create A Gym Class<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
+     <!--  <li class="nav-item">
         <a class="nav-link" href="/foodDiary" style= "font-size: 10px">Log Your Food<span class="sr-only">(current)</span></a>
-      </li>
+      </li> -->
       <li class="nav-item">
         <a class="nav-link" href="/empschedule" style= "font-size: 10px">View Your Work Schedule<span class="sr-only">(current)</span></a>
       </li>
@@ -164,16 +164,6 @@ ease-in-out, box-shadow 1.15s ease-in-out;
 
 
  </div>
- 
- <!-- <div align="centre">
-<a href="/createClass"
-style="font-family: Roboto, sans-serif; color: black; font-size: 25px; font-weight: bold;">Create a Gym Class</a>
-&nbsp &nbsp &nbsp &nbsp &nbsp 
-<a href="/allMembers"
-style="font-family: Roboto, sans-serif; color: black; font-size: 25px; font-weight: bold;">View All Members </a>
-</div>
-
- -->
 
 </body>
 </html>

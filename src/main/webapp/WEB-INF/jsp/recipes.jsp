@@ -155,8 +155,13 @@ body {
 		</nav>
 	</div>
 	
-	
-	
+	<div align = "center">
+		<h4 style="font-family: Roboto, sans-serif; color: black; font-size: 25px; font-weight: bold;">Search Recipes</h4>
+		<form class = "form-horizontal" method="post" action="nutrition">
+			<input type = "text" name="searchQ"/>
+			<input type ="submit" value ="submit"/>
+		</form>
+	</div>
 	
 	<table>
 

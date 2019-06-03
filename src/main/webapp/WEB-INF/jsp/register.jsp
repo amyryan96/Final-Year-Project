@@ -152,12 +152,13 @@ body {
 		<header class="heading"> Register for Your Gym Membership </header>
 		<hr></hr>
 		 <!---Form starting---->
+		 <h3 style="font-family: Roboto, sans-serif; color: white; font-size: 25px; font-weight: bold;">Register Member</h3>
 		<div class="row ">
 			<!--- For Name---->
 			<div class="col-sm-12">
 				<div class="row">
 					<div class="col-xs-4">
-					<h3 style="font-family: Roboto, sans-serif; color: white; font-size: 25px; font-weight: bold;">Register Member</h3>
+					
 						<form class="form-horizontal" method="POST" action="addMember">
 						
 							<input type="hidden" name="Id" value="${member.Id}"> 
@@ -241,14 +242,16 @@ body {
 			</div>
 			</form>
 		</div> 
+	<br>
+	<br>
 	
-		
+<h3 style="font-family: Roboto, sans-serif; color: white; font-size: 25px; font-weight: bold;">Register Employee</h3>
 <div class="row ">
 			<!--- For Name---->
 			<div class="col-sm-12">
 				<div class="row">
 					<div class="col-xs-4">
-					<h3 style="font-family: Roboto, sans-serif; color: white; font-size: 25px; font-weight: bold;">Register Employee</h3>
+					
 						<form class="form-horizontal" method="POST" action="addEmployee">
 						
 							<input type="hidden" name="Id" value="${employee.Id}"> 
@@ -311,6 +314,7 @@ body {
 			</div>
 
 				</div>
+				&nbsp &nbsp &nbsp &nbsp
 				<div class="col-sm-12">
 					<input type="submit" class="btn btn-warning" value="Register" />
 				</div>

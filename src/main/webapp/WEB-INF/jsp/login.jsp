@@ -145,7 +145,6 @@ body {
 		&nbsp &nbsp &nbsp &nbsp
 		<div class="col-sm-12">
 			<input type="submit" class="btn btn-warning" value="Login" />
-			<!-- <button type="button" class="btn btn-outline-secondary">Login</button> -->
 		</div>
 		</form>
 		
@@ -191,7 +190,6 @@ body {
 		&nbsp &nbsp &nbsp &nbsp
 		<div class="col-sm-12">
 			<input type="submit" class="btn btn-warning" value="Login" />
-			<!-- <button type="button" class="btn btn-outline-secondary">Login</button> -->
 		</div>
 		</form>
 		

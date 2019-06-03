@@ -7,7 +7,7 @@
 <style>
 body {
 background-image:
-url("images/gym.jpg"); 
+/* url("images/gym.jpg");  */
 background-repeat : no-repeat;
 background-size: cover;
 width: 100%;
@@ -66,13 +66,14 @@ ease-in-out, box-shadow 1.15s ease-in-out;
 }
 </style>
 <head>
+<link href=static/css/lux/bootstrap.min.css rel="stylesheet">
 <link
-href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
-rel="stylesheet" id="bootstrap-css">
+	href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
 <script
-src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
-src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <meta charset="UTF-8">
 <title>Food Diary Logs</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -97,7 +98,9 @@ src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
         <a class="nav-link" href="/payment" style= "font-size: 10px">Membership Renewal<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" method="post" action="logoutMember" style= "font-size: 10px">Logout<span class="sr-only">(current)</span></a>
+       <form form class="form-horizontal" method="post" action="logoutMember">
+		<input type="submit" class="btn btn-outline-primary" value="Logout" name="logoutMember" />
+		</form>
       </li>
     </ul>
    
@@ -115,22 +118,23 @@ src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <thead>
 <tr>
 <th>Date</th>
-<th>Day Of Week</th>
+<th>Time of Day</th>
 <th>Food Eaten</th>
 <th>Calories</th>
 </tr>
 </thead>
 <tbody>
-<sql:setDataSource var="con" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/fyp_db1" user="root" password="root" /> <!-- Connects to database -->
-<sql:query dataSource="${con }" sql="select * from foodDiary" var="diaries" /> <!-- Select statement for class in selected database  -->
+<sql:setDataSource var="con" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/fypdb" user="root" password="root" /> <!-- Connects to database -->
+<sql:query dataSource="${con }" sql="select * from food_diary where diary_id in(select diary_diary_id from member_diary where member_memberid = ${sessionScope.id})" var="diaries" /> <!-- Select statement for class in selected database  -->
+
 
 <div align = "center">
-<c:forEach var="foodDiary" items="${diaries}">
+<c:forEach var="row" items="${diaries.rows}">
 <tr>
-<td>Date: <c:out value="${diaries.date}" /></td>
-<td>Day Of Week: <c:out value="${diaries.dayOfWeek}" /></td>
-<td>Food Eaten: <c:out value="${diaries.foodType}" /></td>
-<td>Calories: <c:out value="${diaries.calories}" /></td>
+<td><c:out value="${row.date}" /></td>
+<td> <c:out value="${row.time_of_day}" /></td>
+<td><c:out value="${row.food_type}" /></td>
+<td><c:out value="${row.calories}" /></td>
 </tr>
 
 <br/><br/>
