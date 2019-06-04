@@ -115,7 +115,7 @@ input[type="radio"]:checked + span
 					<li class="nav-item"><a class="nav-link" href="/prevGoals" style="font-size: 10px">
 					Previous Goals<span class="sr-only">(current)</span></a></li>
 					<li class="nav-item">
-						<form form class="form-horizontal" method="post" action="logoutMember">
+						<form class="form-horizontal" method="post" action="logoutMember">
 							<input type="submit" class="btn btn-outline-primary"
 								value="Logout" name="logoutMember" />
 						</form>
@@ -125,24 +125,28 @@ input[type="radio"]:checked + span
 			</div>
 </nav>
 </div> 
-
+<div align = "center">
+	<form class="form-horizontal" method="post" action="bookingClass">
 	
+					
 	<sql:setDataSource var="con" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/fypdbnew" user="root" password="root" /> <!-- Connects to database -->
 	<sql:query dataSource="${con }" sql="select * from class_details" var="classes" /> <!-- Select statement for class in selected database  -->
 		
 		<div align = "center">
 		<c:forEach var="rows" items="${classes.rows}">
 			<input type="hidden" name="classId" value="${rows.class_id }" />
+			<input type="hidden" name="classQuantity" value="${rows.class_quantity }" />
+			<input type="hidden" name="currenQuantity" value="${rows.current_quantity }" />
 			<input type="radio" name="classToBook" value="${rows.class_id }">
 			Class Name: <c:out value="${rows.class_name}" /><br>
 			Class Type: <c:out value="${rows.class_type}" /><br> 
-			Date: <c:out value="${rows.date}" /></a> <br>
+			Date: <c:out value="${rows.date}" /><br>
 			Time: <c:out value="${rows.class_time}" />
 			<br/><br/>
 		</c:forEach>
 		</div>
-		<form form class="form-horizontal" method="post" action="logoutMember">
-				<input type="submit" class="btn btn-warning" value="Logout" name="logoutMember" />
-				</form>
+		<input type="submit" class="btn btn-outline-primary" value="Join Class" name="bookingClass" />
+			</form>
+			</div>
 </body>
 </html>

@@ -112,6 +112,13 @@ public class ClassDetails {
 		this.date = date;
 	}
 
+	@Override
+	public String toString() {
+		return "ClassDetails [classId=" + classId + ", className=" + className + ", classType=" + classType
+				+ ", classTime=" + classTime + ", classQuantity=" + classQuantity + ", date=" + date
+				+ ", currentQuantity=" + currentQuantity + "]";
+	}
+
 
 
 

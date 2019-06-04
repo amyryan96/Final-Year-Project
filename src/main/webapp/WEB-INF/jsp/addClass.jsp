@@ -97,8 +97,8 @@ input[type="radio"]:checked + span
         <a class="nav-link" href="/empschedule" style= "font-size: 10px">View Your Work Schedule<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <form form class="form-horizontal" method="post" action="logoutEmployee">
-		<input type="submit" class="btn btn-warning" value="Logout" name="logoutEmployee" />
+        <form class="form-horizontal" method="post" action="logoutEmployee">
+		<input type="submit" class="btn btn-outline-primary" value="Logout" name="logoutEmployee" />
 		</form>
       </li>
     </ul>

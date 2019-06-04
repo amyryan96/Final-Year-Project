@@ -106,7 +106,7 @@ ease-in-out, box-shadow 1.15s ease-in-out;
 					<li class="nav-item"><a class="nav-link" href="/prevGoals" style="font-size: 10px">
 					Previous Goals<span class="sr-only">(current)</span></a></li>
 					<li class="nav-item">
-						<form form class="form-horizontal" method="post" action="logoutMember">
+						<form class="form-horizontal" method="post" action="logoutMember">
 							<input type="submit" class="btn btn-outline-primary"
 								value="Logout" name="logoutMember" />
 						</form>
