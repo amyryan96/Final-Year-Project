@@ -144,7 +144,7 @@ body {
 		</div>
 		&nbsp &nbsp &nbsp &nbsp
 		<div class="col-sm-12">
-			<input type="submit" class="btn btn-warning" value="Login" />
+			<input type="submit" class="btn btn-outline-primary" value="Login" />
 		</div>
 		</form>
 		
@@ -189,7 +189,7 @@ body {
 		</div>
 		&nbsp &nbsp &nbsp &nbsp
 		<div class="col-sm-12">
-			<input type="submit" class="btn btn-warning" value="Login" />
+			<input type="submit" class="btn btn-outline-primary" value="Login" />
 		</div>
 		</form>
 		

@@ -317,11 +317,13 @@ public class ApplicationController {
 	}
 
 	@RequestMapping("/purchase")
-	public String payment(HttpServletRequest request) {
+	public String payment(@SessionAttribute("id") int id, HttpServletRequest request, HttpSession session) {
 		try {
+			Member member = memberSer.getByMemberid(id);
 
 			if (request.getParameter("memberType1") != null) {
 				if (request.getParameter("memlength1") != null) {
+					//Member member = memberSer.getByMemberid(id);
 					Stripe.apiKey = "sk_test_VXgXbC3NwFjrpxeYOswuogRC00dtn7tiRH";
 					Map<String, Object> chargeParams = new HashMap<String, Object>();
 					String answer;
@@ -330,7 +332,7 @@ public class ApplicationController {
 					int eventPrice = (int) Math.round(price);
 					chargeParams.put("amount", eventPrice);
 					chargeParams.put("currency", "eur");
-					chargeParams.put("description", ("Monthly Adult Membership"));
+					chargeParams.put("description", ("Monthly Adult Membership " + member.getMemberid()));
 					chargeParams.put("source", "tok_amex");
 					Charge.create(chargeParams);
 				}
@@ -344,7 +346,7 @@ public class ApplicationController {
 					int eventPrice = (int) Math.round(price);
 					chargeParams.put("amount", eventPrice);
 					chargeParams.put("currency", "eur");
-					chargeParams.put("description", ("3 Month Adult Membership"));
+					chargeParams.put("description", ("3 Month Adult Membership " + member.getMemberid()));
 					chargeParams.put("source", "tok_amex");
 					Charge.create(chargeParams);
 				} else if (request.getParameter("memlength3") != null) {
@@ -356,7 +358,7 @@ public class ApplicationController {
 					int eventPrice = (int) Math.round(price);
 					chargeParams.put("amount", eventPrice);
 					chargeParams.put("currency", "eur");
-					chargeParams.put("description", ("Yearly Adult Membership"));
+					chargeParams.put("description", ("Yearly Adult Membership " +  member.getMemberid()));
 					chargeParams.put("source", "tok_amex");
 					Charge.create(chargeParams);
 				}
@@ -370,7 +372,7 @@ public class ApplicationController {
 					int eventPrice = (int) Math.round(price);
 					chargeParams.put("amount", eventPrice);
 					chargeParams.put("currency", "eur");
-					chargeParams.put("description", ("Monthly Student Membership"));
+					chargeParams.put("description", ("Monthly Student Membership " + member.getMemberid()));
 					chargeParams.put("source", "tok_amex");
 					Charge.create(chargeParams);
 				}
@@ -384,7 +386,7 @@ public class ApplicationController {
 					int eventPrice = (int) Math.round(price);
 					chargeParams.put("amount", eventPrice);
 					chargeParams.put("currency", "eur");
-					chargeParams.put("description", ("3 Month Student Membership"));
+					chargeParams.put("description", ("3 Month Student Membership " + member.getMemberid()));
 					chargeParams.put("source", "tok_amex");
 					Charge.create(chargeParams);
 				} else if (request.getParameter("memlength3") != null) {
@@ -396,7 +398,7 @@ public class ApplicationController {
 					int eventPrice = (int) Math.round(price);
 					chargeParams.put("amount", eventPrice);
 					chargeParams.put("currency", "eur");
-					chargeParams.put("description", ("Yearly Student Membership"));
+					chargeParams.put("description", ("Yearly Student Membership " + member.getMemberid()));
 					chargeParams.put("source", "tok_amex");
 					Charge.create(chargeParams);
 				}
@@ -410,7 +412,7 @@ public class ApplicationController {
 					int eventPrice = (int) Math.round(price);
 					chargeParams.put("amount", eventPrice);
 					chargeParams.put("currency", "eur");
-					chargeParams.put("description", ("Monthly Child Membership"));
+					chargeParams.put("description", ("Monthly Child Membership " + member.getMemberid()));
 					chargeParams.put("source", "tok_amex");
 					Charge.create(chargeParams);
 				}
@@ -424,7 +426,7 @@ public class ApplicationController {
 					int eventPrice = (int) Math.round(price);
 					chargeParams.put("amount", eventPrice);
 					chargeParams.put("currency", "eur");
-					chargeParams.put("description", ("3 Month Child Membership"));
+					chargeParams.put("description", ("3 Month Child Membership " + member.getMemberid()));
 					chargeParams.put("source", "tok_amex");
 					Charge.create(chargeParams);
 				} else if (request.getParameter("memlength3") != null) {
@@ -436,7 +438,7 @@ public class ApplicationController {
 					int eventPrice = (int) Math.round(price);
 					chargeParams.put("amount", eventPrice);
 					chargeParams.put("currency", "eur");
-					chargeParams.put("description", ("Yearly Child Membership"));
+					chargeParams.put("description", ("Yearly Child Membership " + member.getMemberid()));
 					chargeParams.put("source", "tok_amex");
 					Charge.create(chargeParams);
 				}

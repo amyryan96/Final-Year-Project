@@ -72,7 +72,7 @@ margin-top: 166px;  */
 
 	<div role="navigation">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="#">Gym HomePage</a>
+			<a class="navbar-brand" href="success">Gym HomePage</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarColor03" aria-controls="navbarColor03"
 				aria-expanded="false" aria-label="Toggle navigation">
@@ -81,33 +81,25 @@ margin-top: 166px;  */
 
 			<div class="collapse navbar-collapse" id="navbarColor03">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active"><a class="nav-link"
-						href="/bookClass" style="font-size: 10px">Book A Gym Class<span
-							class="sr-only">(current)</span></a></li>
-					<li class="nav-item"><a class="nav-link" href="/foodDiary"
-						style="font-size: 10px">Log Your Food<span class="sr-only">(current)</span></a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="/payment"
-						style="font-size: 10px">Membership Renewal<span
-							class="sr-only">(current)</span></a></li>
-					<li class="nav-item"><a class="nav-link" href="/progress"
-						style="font-size: 10px">Check Your Progress<span
-							class="sr-only">(current)</span></a></li>
-					<li class="nav-item"><a class="nav-link" href="/viewFoodLogs"
-						style="font-size: 10px">View Previous Food Logs<span
-							class="sr-only">(current)</span></a></li>
-					<li class="nav-item"><a class="nav-link" href="/recipes"
-						style="font-size: 10px">Search Recipes<span
-							class="sr-only">(current)</span></a></li>
-					<li class="nav-item"><a class="nav-link" href="/MyFirstSchedule"
+					<li class="nav-item active"><a class="nav-link" href="/bookClass" style="font-size: 10px">
+					Book A Gym Class<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/foodDiary" style="font-size: 10px">
+					Log Your Food<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/payment" style="font-size: 10px">
+					Membership Renewal<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/progress" style="font-size: 10px">
+					Set your Weekly Goals<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/viewFoodLogs" style="font-size: 10px">
+					View Previous Food Logs<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/recipes" style="font-size: 10px">
+					Search Recipes<span class="sr-only">(current)</span></a></li>
+					<!-- <li class="nav-item"><a class="nav-link" href="/MyFirstSchedule"
 						style="font-size: 10px">Test<span
-							class="sr-only">(current)</span></a></li>
-					<li class="nav-item"><a class="nav-link" href="/prevGoals"
-						style="font-size: 10px">Previous Goals<span
-							class="sr-only">(current)</span></a></li>
+							class="sr-only">(current)</span></a></li> -->
+					<li class="nav-item"><a class="nav-link" href="/prevGoals" style="font-size: 10px">
+					Previous Goals<span class="sr-only">(current)</span></a></li>
 					<li class="nav-item">
-						<form form class="form-horizontal" method="post"
-							action="logoutMember">
+						<form form class="form-horizontal" method="post" action="logoutMember">
 							<input type="submit" class="btn btn-outline-primary"
 								value="Logout" name="logoutMember" />
 						</form>
@@ -128,10 +120,10 @@ margin-top: 166px;  */
 			to your homepage </header>
 		<hr></hr>
 
-<form class="form-horizontal" method="post" action="prevGoals">
+<!-- <form class="form-horizontal" method="post" action="prevGoals">
 	
 	<input type="submit" value="View Previous Goal" />
-</form>
+</form> -->
 		<div align="centre">
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
 				<!-- Indicators -->

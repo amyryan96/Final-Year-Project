@@ -5,7 +5,7 @@
 <html>
 <style>
 body {
-	background-image: url("images/gym.jpg");
+	/* background-image: url("images/gym.jpg"); */
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
@@ -93,6 +93,9 @@ body {
 <meta charset="UTF-8">
 <title>Progress Page</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
 <div role="navigation">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="/success">Gym HomePage</a>
@@ -103,33 +106,35 @@ body {
 		</button>
 
 		<div class="collapse navbar-collapse" id="navbarColor03">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active"><a class="nav-link"
-					href="/bookClass" style="font-size: 10px">Book A Gym Class<span
-						class="sr-only">(current)</span></a></li>
-				<li class="nav-item"><a class="nav-link" href="/foodDiary"
-					style="font-size: 10px">Log Your Food<span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item"><a class="nav-link" href="/payment"
-					style="font-size: 10px">Membership Renewal<span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item"><a class="nav-link" href="/viewFoodLogs"
-					style="font-size: 10px">View Previous Food Logs<span
-						class="sr-only">(current)</span></a></li>
-				<li class="nav-item">
-					<form form class="form-horizontal" method="post"
-						action="logoutMember">
-						<input type="submit" class="btn btn-outline-primary"
-							value="Logout" name="logoutMember" />
-					</form>
-				</li>
-			</ul>
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active"><a class="nav-link" href="/bookClass" style="font-size: 10px">
+					Book A Gym Class<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/foodDiary" style="font-size: 10px">
+					Log Your Food<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/payment" style="font-size: 10px">
+					Membership Renewal<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/progress" style="font-size: 10px">
+					Set your Weekly Goals<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/viewFoodLogs" style="font-size: 10px">
+					View Previous Food Logs<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/recipes" style="font-size: 10px">
+					Search Recipes<span class="sr-only">(current)</span></a></li>
+					<!-- <li class="nav-item"><a class="nav-link" href="/MyFirstSchedule"
+						style="font-size: 10px">Test<span
+							class="sr-only">(current)</span></a></li> -->
+					<li class="nav-item"><a class="nav-link" href="/prevGoals" style="font-size: 10px">
+					Previous Goals<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item">
+						<form form class="form-horizontal" method="post" action="logoutMember">
+							<input type="submit" class="btn btn-outline-primary"
+								value="Logout" name="logoutMember" />
+						</form>
+					</li>
+				</ul>
 
-		</div>
+			</div>
 	</nav>
 </div>
-</head>
-<body>
 <form class="form-horizontal" method="post" action="ViewGoals">
 	<input type="text" list="datesLog" placeholder="Choose Date" />
 	<sql:setDataSource var="con" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/fypdbnew" user="root" password="root" /> <!-- Connects to database -->
@@ -157,7 +162,7 @@ body {
 	 	<input type="hidden" name="weights" value="${list.weight_time }" />
 	 	<input type="hidden" name="casual" value="${list.casw_time }" />
 	 </c:forEach>
-	<input type="submit" value="View Previous Goal" />
+	<input type="submit" class="btn btn-outline-primary" value="View Previous Goal" />
 </form>
 
 </body>

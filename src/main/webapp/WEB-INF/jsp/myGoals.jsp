@@ -123,6 +123,9 @@ String dataPoints3 = gsonObj.toJson(list);
 <title>Progress Page</title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+</head>
+<body>
 <div role="navigation">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="/success">Gym HomePage</a>
@@ -130,33 +133,36 @@ String dataPoints3 = gsonObj.toJson(list);
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarColor03">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/bookClass" style= "font-size: 10px">Book A Gym Class<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/foodDiary" style= "font-size: 10px">Log Your Food<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/payment" style= "font-size: 10px">Membership Renewal<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/viewFoodLogs" style= "font-size: 10px">View Previous Food Logs<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-       <form form class="form-horizontal" method="post" action="logoutMember">
-		<input type="submit" class="btn btn-outline-primary" value="Logout" name="logoutMember" />
-		</form>
-      </li>
-    </ul>
-   
-  </div>
+ <div class="collapse navbar-collapse" id="navbarColor03">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active"><a class="nav-link" href="/bookClass" style="font-size: 10px">
+					Book A Gym Class<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/foodDiary" style="font-size: 10px">
+					Log Your Food<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/payment" style="font-size: 10px">
+					Membership Renewal<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/progress" style="font-size: 10px">
+					Set your Weekly Goals<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/viewFoodLogs" style="font-size: 10px">
+					View Previous Food Logs<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/recipes" style="font-size: 10px">
+					Search Recipes<span class="sr-only">(current)</span></a></li>
+					<!-- <li class="nav-item"><a class="nav-link" href="/MyFirstSchedule"
+						style="font-size: 10px">Test<span
+							class="sr-only">(current)</span></a></li> -->
+					<li class="nav-item"><a class="nav-link" href="/prevGoals" style="font-size: 10px">
+					Previous Goals<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item">
+						<form form class="form-horizontal" method="post" action="logoutMember">
+							<input type="submit" class="btn btn-outline-primary"
+								value="Logout" name="logoutMember" />
+						</form>
+					</li>
+				</ul>
+
+			</div>
 </nav>
 </div> 
-</head>
-<body>
-
 
 
 

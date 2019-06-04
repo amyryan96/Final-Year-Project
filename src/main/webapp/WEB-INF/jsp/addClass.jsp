@@ -85,12 +85,12 @@ input[type="radio"]:checked + span
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarColor03">
+ <div class="collapse navbar-collapse" id="navbarColor03">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/bookClass" style= "font-size: 10px">Create A Gym Class<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/createClass" style= "font-size: 10px">Create A Gym Class<span class="sr-only">(current)</span></a>
       </li>
-      <!-- <li class="nav-item">
+     <!--  <li class="nav-item">
         <a class="nav-link" href="/foodDiary" style= "font-size: 10px">Log Your Food<span class="sr-only">(current)</span></a>
       </li> -->
       <li class="nav-item">
@@ -99,7 +99,8 @@ input[type="radio"]:checked + span
       <li class="nav-item">
         <form form class="form-horizontal" method="post" action="logoutEmployee">
 		<input type="submit" class="btn btn-warning" value="Logout" name="logoutEmployee" />
-		</form></li>
+		</form>
+      </li>
     </ul>
    
   </div>

@@ -15,7 +15,7 @@ body {
 .container {
 	font-family: Roboto, sans-serif;
 	background-image:
-		/* url(https://image.freepik.com/free-vector/dark-blue-blurred-background_1034-589.jpg); */
+		
 		
 	border-style: 1px solid grey;
 	margin: 0 auto;
@@ -237,7 +237,7 @@ body {
 
 				</div>
 				<div class="col-sm-12">
-					<input type="submit" class="btn btn-warning" value="Register" />
+					<input type="submit" class="btn btn-outline-primary" value="Register" />
 				</div>
 			</div>
 			</form>
@@ -316,7 +316,7 @@ body {
 				</div>
 				&nbsp &nbsp &nbsp &nbsp
 				<div class="col-sm-12">
-					<input type="submit" class="btn btn-warning" value="Register" />
+					<input type="submit" class="btn btn-outline-primary" value="Register" />
 				</div>
 			
 			</form>

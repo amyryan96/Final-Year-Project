@@ -5,7 +5,7 @@
 body {
 background-image:
 
-url("images/gym.jpg"); 
+/* url("images/gym.jpg");  */
 background-repeat : no-repeat;
 background-size: cover;
 width: 100%;
@@ -18,19 +18,19 @@ background-repeat: no-repeat;
 .container {
 font-family: Roboto, sans-serif;
 background-image:
-url("images/light-grey-background.jpg"); 
-/* url(https://image.freepik.com/free-vector/dark-blue-blurred-background_1034-589.jpg); */
+/* url("images/light-grey-background.jpg");  */
 
-border-style: 1px solid grey;
-margin: 0 auto;
+
+/* border-style: 1px solid grey; */
+margin: 0 auto; 
 text-align: center;
-opacity: 0.8;
+/* opacity: 0.8; */
 margin-top: 67px;
 /* box-shadow: 2px 5px 5px 0px #eee; */
-max-width: 500px;
-padding-top: 10px;
-height: 450px;
-margin-top: 166px;
+/* max-width: 450px; */
+/* padding-top: 10px; */
+/* height: 450px; */
+/* margin-top: 166px; */
 }
 
 /*---for heading-----*/
@@ -89,27 +89,34 @@ input[type="radio"]:checked + span
   </button>
 
   <div class="collapse navbar-collapse" id="navbarColor03">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/bookClass" style= "font-size: 10px">Book A Gym Class<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/foodDiary" style= "font-size: 10px">Log Your Food<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/payment" style= "font-size: 10px">Membership Renewal<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/viewFoodLogs" style= "font-size: 10px">View Previous Food Logs<span class="sr-only">(current)</span></a>
-      </li>
-      
-      <li class="nav-item">
-       <form form class="form-horizontal" method="post" action="logoutMember">
-		<input type="submit" class="btn btn-outline-primary" value="Logout" name="logoutMember" />
-		</form></li>
-    </ul>
-   
-  </div>
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active"><a class="nav-link" href="/bookClass" style="font-size: 10px">
+					Book A Gym Class<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/foodDiary" style="font-size: 10px">
+					Log Your Food<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/payment" style="font-size: 10px">
+					Membership Renewal<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/progress" style="font-size: 10px">
+					Set your Weekly Goals<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/viewFoodLogs" style="font-size: 10px">
+					View Previous Food Logs<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/recipes" style="font-size: 10px">
+					Search Recipes<span class="sr-only">(current)</span></a></li>
+					<!-- <li class="nav-item"><a class="nav-link" href="/MyFirstSchedule"
+						style="font-size: 10px">Test<span
+							class="sr-only">(current)</span></a></li> -->
+					<li class="nav-item"><a class="nav-link" href="/prevGoals" style="font-size: 10px">
+					Previous Goals<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item">
+						<form form class="form-horizontal" method="post" action="logoutMember">
+							<input type="submit" class="btn btn-outline-primary"
+								value="Logout" name="logoutMember" />
+						</form>
+					</li>
+				</ul>
+
+			</div>
+			
 </nav>
 </div> 
 
@@ -121,12 +128,12 @@ input[type="radio"]:checked + span
 
 <form action="/purchase" method="POST">
 
-<br/><h3 style="font-family: Roboto, sans-serif; color: black; font-weight: bold;">Choose Membership type <br/></h3>
+<br/><h2 style="font-family: Roboto, sans-serif; color: black; font-weight: bold;">Choose Membership type <br/></h2>
 <input type="radio" name="memberType1" value="adult"> <span>Adult Membership</span><br>
 <input type="radio" name="memberType2" value="student"> <span>Student Membership</span><br> 
 <input type="radio" name="memberType3" value="child"><span>Under 18's</span>
 
-<h3 style="font-family: Roboto, sans-serif; color: black; font-weight: bold;">Choose the membership length</h3>
+<h2 style="font-family: Roboto, sans-serif; color: black; font-weight: bold;">Choose the membership length</h2>
 <input type="radio" name="memlength1" value="month"><span>One Month</span><br>
 <input type="radio" name="memlength2" value="three"><span> Three Months</span><br> 
 <input type="radio" name="memlength3" value="year"><span>One Year</span><br>
@@ -134,7 +141,7 @@ input[type="radio"]:checked + span
 <script src="https://checkout.stripe.com/checkout.js"
 class="stripe-button" data-key="pk_test_ARH638kxPC6MUhAmjSYMQf19008FMKa5w5"
 data-amount=data-name= "your site name"
-data-description="Membership Renewal"
+data-description="Membership Renewal/Purchase"
 data-image="images/gym.jpg"
 data-locale="auto" data-currency="eur">
 </script>
