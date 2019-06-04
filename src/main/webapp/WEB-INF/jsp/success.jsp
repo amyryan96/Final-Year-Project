@@ -102,6 +102,9 @@ margin-top: 166px;  */
 					<li class="nav-item"><a class="nav-link" href="/MyFirstSchedule"
 						style="font-size: 10px">Test<span
 							class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/prevGoals"
+						style="font-size: 10px">Previous Goals<span
+							class="sr-only">(current)</span></a></li>
 					<li class="nav-item">
 						<form form class="form-horizontal" method="post"
 							action="logoutMember">
@@ -125,7 +128,10 @@ margin-top: 166px;  */
 			to your homepage </header>
 		<hr></hr>
 
-
+<form class="form-horizontal" method="post" action="prevGoals">
+	
+	<input type="submit" value="View Previous Goal" />
+</form>
 		<div align="centre">
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
 				<!-- Indicators -->

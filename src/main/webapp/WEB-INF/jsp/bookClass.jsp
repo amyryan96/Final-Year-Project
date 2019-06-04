@@ -120,7 +120,7 @@ input[type="radio"]:checked + span
 </div> 
 
 	
-	<sql:setDataSource var="con" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/fyp_db1" user="root" password="root" /> <!-- Connects to database -->
+	<sql:setDataSource var="con" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/fypdbnew" user="root" password="root" /> <!-- Connects to database -->
 	<sql:query dataSource="${con }" sql="select * from class_details" var="classes" /> <!-- Select statement for class in selected database  -->
 		
 		<div align = "center">

@@ -17,6 +17,10 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 
 import com.example.demo.app.member.Employee;
 import com.example.demo.app.member.EmployeeService;
+import com.example.demo.app.member.Exercise;
+import com.example.demo.app.member.ExerciseDate;
+import com.example.demo.app.member.ExerciseDateService;
+import com.example.demo.app.member.ExerciseService;
 import com.example.demo.app.member.Member;
 import com.example.demo.app.member.MemberService;
 import com.example.demo.app.member.WelcomeEmail;
@@ -31,11 +35,16 @@ public class ApplicationController {
 
 	@Autowired
 	public WelcomeEmail welcomeEmail;
-	
-	//@Value("${mail.welcome}") 
+
+	@Autowired
+	public ExerciseDateService exerDateSer;
+
+	// @Value("${mail.welcome}")
 	private String text = "Thank You for Registering to iGym! \nLogin to start your journey.\n\n Kind Regards,\n iGym Portmarnock Team";
-	
-	
+
+	@Autowired
+	private ExerciseService exerSer;
+
 	@Autowired
 	private MemberService memberSer;
 
@@ -49,19 +58,154 @@ public class ApplicationController {
 
 		return "welcome";
 	}
-	
+
 	@RequestMapping("/progress")
-	public String progress()
-	{
+	public String progress() {
 		return "progress";
 	}
-	
-	@RequestMapping("/MyFirstSchedule")
-	public String schedule()
-	{
-		return "MyFirstSchedule";
-		
+
+	@RequestMapping("/progresschart")
+	public String chart() {
+		return "progresschart";
 	}
+
+	@PostMapping("/addExercise")
+	public String addExercise(@SessionAttribute("id") int id, HttpServletRequest request) {
+
+		String day = request.getParameter("day");
+		String day1 = request.getParameter("day1");
+		String day2 = request.getParameter("day2");
+		String day3 = request.getParameter("day3");
+		String day4 = request.getParameter("day4");
+		String day5 = request.getParameter("day5");
+		String day6 = request.getParameter("day6");
+		ExerciseDate exDate = new ExerciseDate(request.getParameter("dateWeek"));
+		Member mem = memberSer.getByMemberid(id);
+		if (day != null) {
+			Exercise exercise = new Exercise();
+			exercise.setCardioTime(Integer.parseInt(request.getParameter("exercise1")));
+			exercise.setWeightTime(Integer.parseInt(request.getParameter("exercise2")));
+			exercise.setCaswTime(Integer.parseInt(request.getParameter("exercise3")));
+			exercise.setDay(day);
+			exDate.getExercise().add(exercise);
+			exerSer.addExercise(exercise);
+			request.getParameter("Memberid");
+			//Member mem = memberSer.getByMemberid(id);
+			mem.getExerciseDate().add(exDate);
+
+		}
+		if (day1 != null) {
+			Exercise exercise = new Exercise();
+			exercise.setCardioTime(Integer.parseInt(request.getParameter("exercise1M")));
+			exercise.setWeightTime(Integer.parseInt(request.getParameter("exercise2M")));
+			exercise.setCaswTime(Integer.parseInt(request.getParameter("exercise3M")));
+			exercise.setDay(day1);
+			exerSer.addExercise(exercise);
+			exDate.getExercise().add(exercise);
+			
+			request.getParameter("Memberid");
+			//Member mem = memberSer.getByMemberid(id);
+			mem.getExerciseDate().add(exDate);
+
+		}
+		if (day2 != null) {
+			Exercise exercise = new Exercise();
+			exercise.setCardioTime(Integer.parseInt(request.getParameter("exerciseT1")));
+			exercise.setWeightTime(Integer.parseInt(request.getParameter("exerciseT2")));
+			exercise.setCaswTime(Integer.parseInt(request.getParameter("exerciseT3")));
+			exercise.setDay(day2);
+//			exerSer.addExercise(exercise);
+
+			exDate.getExercise().add(exercise);
+			exerSer.addExercise(exercise);
+			request.getParameter("Memberid");
+			//Member mem = memberSer.getByMemberid(id);
+			mem.getExerciseDate().add(exDate);
+			
+
+		}
+		if (day3 != null) {
+			Exercise exercise = new Exercise();
+			exercise.setCardioTime(Integer.parseInt(request.getParameter("exercise1W")));
+			exercise.setWeightTime(Integer.parseInt(request.getParameter("exercise2W")));
+			exercise.setCaswTime(Integer.parseInt(request.getParameter("exercise3W")));
+			exercise.setDay(day3);
+		//	exerSer.addExercise(exercise);
+
+			exDate.getExercise().add(exercise);
+			exerSer.addExercise(exercise);
+			request.getParameter("Memberid");
+			//Member mem = memberSer.getByMemberid(id);
+			mem.getExerciseDate().add(exDate);
+		}
+		if (day4 != null) {
+			Exercise exercise = new Exercise();
+			exercise.setCardioTime(Integer.parseInt(request.getParameter("exercise1T")));
+			exercise.setWeightTime(Integer.parseInt(request.getParameter("exercise2T")));
+			exercise.setCaswTime(Integer.parseInt(request.getParameter("exercise3T")));
+			exercise.setDay(day4);
+			//exerSer.addExercise(exercise);
+
+			exDate.getExercise().add(exercise);
+			exerSer.addExercise(exercise);
+			request.getParameter("Memberid");
+			//Member mem = memberSer.getByMemberid(id);
+			mem.getExerciseDate().add(exDate);
+		}
+		if (day5 != null) {
+			Exercise exercise = new Exercise();
+			exercise.setCardioTime(Integer.parseInt(request.getParameter("exercise1F")));
+			exercise.setWeightTime(Integer.parseInt(request.getParameter("exercise2F")));
+			exercise.setCaswTime(Integer.parseInt(request.getParameter("exercise3F")));
+			exercise.setDay(day5);
+			//exerSer.addExercise(exercise);
+
+			exDate.getExercise().add(exercise);
+			exerSer.addExercise(exercise);
+			request.getParameter("Memberid");
+			//Member mem = memberSer.getByMemberid(id);
+			mem.getExerciseDate().add(exDate);
+		}
+		if (day6 != null) {
+			Exercise exercise = new Exercise();
+			exercise.setCardioTime(Integer.parseInt(request.getParameter("exercise1S")));
+			exercise.setWeightTime(Integer.parseInt(request.getParameter("exercise2S")));
+			exercise.setCaswTime(Integer.parseInt(request.getParameter("exercise3S")));
+			exercise.setDay(day6);
+			//exerSer.addExercise(exercise);
+
+			exDate.getExercise().add(exercise);
+			exerSer.addExercise(exercise);
+			request.getParameter("Memberid");
+			//Member mem = memberSer.getByMemberid(id);
+			mem.getExerciseDate().add(exDate);
+			//memberSer.upadteMember(mem.getMemberid(), mem);
+
+		}
+		exerDateSer.addExerciseDate(exDate);
+		memberSer.upadteMember(mem.getMemberid(), mem);
+
+		return "progresschart";
+	}
+
+	@RequestMapping("/MyFirstSchedule")
+	public String schedule() {
+		return "MyFirstSchedule";
+
+	}
+	
+	@RequestMapping("/prevGoals")
+	public String prevGoals() {
+		return "previousGoals";
+	}
+	
+	@RequestMapping("/ViewGoals")
+	public String ViewGoals(HttpServletRequest request) {
+		//int goalId = Integer.parseInt(request.getParameter("goalId"));
+		//ExerciseDate ed = exerDateSer.getById(goalId);
+		return "myGoals";
+	}
+
 	@RequestMapping("/recipes")
 	public String recipes() {
 		return "recipes";
@@ -72,7 +216,6 @@ public class ApplicationController {
 		return "register";
 	}
 
-	
 	@PostMapping("/addMember")
 	public String registerMember(@ModelAttribute Member mem, BindingResult bindingresult, HttpServletRequest request) {
 
@@ -81,10 +224,10 @@ public class ApplicationController {
 		memberSer.addMember(mem);
 		return "regsuccess";
 	}
-	
+
 	@PostMapping("/addEmployee")
-	public String registerEmployee(@ModelAttribute Employee emp, BindingResult bindingresult, HttpServletRequest request)
-	{
+	public String registerEmployee(@ModelAttribute Employee emp, BindingResult bindingresult,
+			HttpServletRequest request) {
 		empSer.addEmployee(emp);
 		return "empregsuccess";
 	}
@@ -101,41 +244,32 @@ public class ApplicationController {
 		String email = mem.getEmail();
 		String password = mem.getPassword();
 		String name = mem.getName();
-		if (memberSer.findByEmailAndPassword(email, password) != null)
-		{
+		if (memberSer.findByEmailAndPassword(email, password) != null) {
 			mem = memberSer.findByEmailAndPassword(email, password);
 			HttpSession session = request.getSession();
 			session.setAttribute("member", mem);
 			session.setAttribute("id", mem.getMemberid());
 			return "success";
+		} else {
+
+			return "failure";
 		}
-		 else {
-
-			 	return "failure";
-		 	}
 	}
 
-	
 	@RequestMapping("/loginEmployee")
-	public String loginEmployee(@ModelAttribute Employee emp, HttpServletRequest request)
-	{
-	String email = emp.getEmail();
-	String password = emp.getPassword();
-	if(empSer.findByEmailAndPassword(email, password)!=null)
-	{
-		emp = empSer.findByEmailAndPassword(email, password);
-		HttpSession session = request.getSession();
-		session.setAttribute("employee", emp);
-		return "adminSuccess";
+	public String loginEmployee(@ModelAttribute Employee emp, HttpServletRequest request) {
+		String email = emp.getEmail();
+		String password = emp.getPassword();
+		if (empSer.findByEmailAndPassword(email, password) != null) {
+			emp = empSer.findByEmailAndPassword(email, password);
+			HttpSession session = request.getSession();
+			session.setAttribute("employee", emp);
+			return "adminSuccess";
+		} else {
+			return "failure";
+		}
+
 	}
-		else {
-				return "failure";
-			}
-	
-	}
-
-
-
 
 	@RequestMapping("/logoutMember")
 	public String logoutMember(HttpServletRequest request) {
@@ -144,7 +278,7 @@ public class ApplicationController {
 		return "welcome";
 
 	}
-	
+
 	@RequestMapping("/logoutEmployee")
 	public String logoutEmployee(HttpServletRequest request) {
 		HttpSession session = request.getSession();
@@ -159,7 +293,8 @@ public class ApplicationController {
 	}
 
 	@PostMapping("/addFood")
-	public String addfoodDiary(@SessionAttribute("id") int id, @ModelAttribute foodDiary food, BindingResult bindingresult, HttpServletRequest request) {
+	public String addfoodDiary(@SessionAttribute("id") int id, @ModelAttribute foodDiary food,
+			BindingResult bindingresult, HttpServletRequest request) {
 		String timeDay = request.getParameter("time");
 		food.setTimeOfDay(timeDay);
 		foodSer.addFood(food);
@@ -167,7 +302,7 @@ public class ApplicationController {
 		Member mem = memberSer.getByMemberid(id);
 		mem.getDiary().add(food);
 		foodSer.addFood(food);
-		return "foodDiary";
+		return "success";
 	}
 
 	@GetMapping("/viewFoodLogs")
@@ -182,29 +317,25 @@ public class ApplicationController {
 	}
 
 	@RequestMapping("/purchase")
-	public String payment(HttpServletRequest request)
-	{
+	public String payment(HttpServletRequest request) {
 		try {
-			
-			if(request.getParameter("memberType1") != null)
-			{
-				if(request.getParameter("memlength1") != null)
-				{
-				Stripe.apiKey = "sk_test_VXgXbC3NwFjrpxeYOswuogRC00dtn7tiRH";
-				Map<String, Object> chargeParams = new HashMap<String, Object>();
-				String answer;
-				int yourPrice;
-				double price = (40 * 100);
-				int eventPrice = (int) Math.round(price);
-				chargeParams.put("amount", eventPrice);
-				chargeParams.put("currency", "eur");
-				chargeParams.put("description", ("Monthly Adult Membership"));
-				chargeParams.put("source", "tok_amex");
-				Charge.create(chargeParams);
+
+			if (request.getParameter("memberType1") != null) {
+				if (request.getParameter("memlength1") != null) {
+					Stripe.apiKey = "sk_test_VXgXbC3NwFjrpxeYOswuogRC00dtn7tiRH";
+					Map<String, Object> chargeParams = new HashMap<String, Object>();
+					String answer;
+					int yourPrice;
+					double price = (40 * 100);
+					int eventPrice = (int) Math.round(price);
+					chargeParams.put("amount", eventPrice);
+					chargeParams.put("currency", "eur");
+					chargeParams.put("description", ("Monthly Adult Membership"));
+					chargeParams.put("source", "tok_amex");
+					Charge.create(chargeParams);
 				}
 
-				else if(request.getParameter("memlength2") != null)
-				{
+				else if (request.getParameter("memlength2") != null) {
 					Stripe.apiKey = "sk_test_VXgXbC3NwFjrpxeYOswuogRC00dtn7tiRH";
 					Map<String, Object> chargeParams = new HashMap<String, Object>();
 					String answer;
@@ -216,9 +347,7 @@ public class ApplicationController {
 					chargeParams.put("description", ("3 Month Adult Membership"));
 					chargeParams.put("source", "tok_amex");
 					Charge.create(chargeParams);
-				}
-				else if(request.getParameter("memlength3") != null)
-				{
+				} else if (request.getParameter("memlength3") != null) {
 					Stripe.apiKey = "sk_test_VXgXbC3NwFjrpxeYOswuogRC00dtn7tiRH";
 					Map<String, Object> chargeParams = new HashMap<String, Object>();
 					String answer;
@@ -231,26 +360,22 @@ public class ApplicationController {
 					chargeParams.put("source", "tok_amex");
 					Charge.create(chargeParams);
 				}
-			}
-			else if(request.getParameter("memberType2") != null)
-			{
-				if(request.getParameter("memlength1") != null)
-				{
-				Stripe.apiKey = "sk_test_VXgXbC3NwFjrpxeYOswuogRC00dtn7tiRH";
-				Map<String, Object> chargeParams = new HashMap<String, Object>();
-				String answer;
-				int yourPrice;
-				double price = (25 * 100);
-				int eventPrice = (int) Math.round(price);
-				chargeParams.put("amount", eventPrice);
-				chargeParams.put("currency", "eur");
-				chargeParams.put("description", ("Monthly Student Membership"));
-				chargeParams.put("source", "tok_amex");
-				Charge.create(chargeParams);
+			} else if (request.getParameter("memberType2") != null) {
+				if (request.getParameter("memlength1") != null) {
+					Stripe.apiKey = "sk_test_VXgXbC3NwFjrpxeYOswuogRC00dtn7tiRH";
+					Map<String, Object> chargeParams = new HashMap<String, Object>();
+					String answer;
+					int yourPrice;
+					double price = (25 * 100);
+					int eventPrice = (int) Math.round(price);
+					chargeParams.put("amount", eventPrice);
+					chargeParams.put("currency", "eur");
+					chargeParams.put("description", ("Monthly Student Membership"));
+					chargeParams.put("source", "tok_amex");
+					Charge.create(chargeParams);
 				}
 
-				else if(request.getParameter("memlength2") != null)
-				{
+				else if (request.getParameter("memlength2") != null) {
 					Stripe.apiKey = "sk_test_VXgXbC3NwFjrpxeYOswuogRC00dtn7tiRH";
 					Map<String, Object> chargeParams = new HashMap<String, Object>();
 					String answer;
@@ -262,9 +387,7 @@ public class ApplicationController {
 					chargeParams.put("description", ("3 Month Student Membership"));
 					chargeParams.put("source", "tok_amex");
 					Charge.create(chargeParams);
-				}
-				else if(request.getParameter("memlength3") != null)
-				{
+				} else if (request.getParameter("memlength3") != null) {
 					Stripe.apiKey = "sk_test_VXgXbC3NwFjrpxeYOswuogRC00dtn7tiRH";
 					Map<String, Object> chargeParams = new HashMap<String, Object>();
 					String answer;
@@ -277,26 +400,22 @@ public class ApplicationController {
 					chargeParams.put("source", "tok_amex");
 					Charge.create(chargeParams);
 				}
-			}
-			else if(request.getParameter("memberType3") != null)
-			{
-				if(request.getParameter("memlength1") != null)
-				{
-				Stripe.apiKey = "sk_test_VXgXbC3NwFjrpxeYOswuogRC00dtn7tiRH";
-				Map<String, Object> chargeParams = new HashMap<String, Object>();
-				String answer;
-				int yourPrice;
-				double price = (15 * 100);
-				int eventPrice = (int) Math.round(price);
-				chargeParams.put("amount", eventPrice);
-				chargeParams.put("currency", "eur");
-				chargeParams.put("description", ("Monthly Child Membership"));
-				chargeParams.put("source", "tok_amex");
-				Charge.create(chargeParams);
+			} else if (request.getParameter("memberType3") != null) {
+				if (request.getParameter("memlength1") != null) {
+					Stripe.apiKey = "sk_test_VXgXbC3NwFjrpxeYOswuogRC00dtn7tiRH";
+					Map<String, Object> chargeParams = new HashMap<String, Object>();
+					String answer;
+					int yourPrice;
+					double price = (15 * 100);
+					int eventPrice = (int) Math.round(price);
+					chargeParams.put("amount", eventPrice);
+					chargeParams.put("currency", "eur");
+					chargeParams.put("description", ("Monthly Child Membership"));
+					chargeParams.put("source", "tok_amex");
+					Charge.create(chargeParams);
 				}
 
-				else if(request.getParameter("memlength2") != null)
-				{
+				else if (request.getParameter("memlength2") != null) {
 					Stripe.apiKey = "sk_test_VXgXbC3NwFjrpxeYOswuogRC00dtn7tiRH";
 					Map<String, Object> chargeParams = new HashMap<String, Object>();
 					String answer;
@@ -308,9 +427,7 @@ public class ApplicationController {
 					chargeParams.put("description", ("3 Month Child Membership"));
 					chargeParams.put("source", "tok_amex");
 					Charge.create(chargeParams);
-				}
-				else if(request.getParameter("memlength3") != null)
-				{
+				} else if (request.getParameter("memlength3") != null) {
 					Stripe.apiKey = "sk_test_VXgXbC3NwFjrpxeYOswuogRC00dtn7tiRH";
 					Map<String, Object> chargeParams = new HashMap<String, Object>();
 					String answer;
@@ -324,11 +441,9 @@ public class ApplicationController {
 					Charge.create(chargeParams);
 				}
 			}
-			
-		}
-		catch(Exception e)
-		{
-		
+
+		} catch (Exception e) {
+
 		}
 		return "success";
 	}

@@ -120,7 +120,7 @@ body {
 					<div class="col-xs-8">
 						<input type="email" name="email" id="email"
 							placeholder="Enter Your Email" class="form-control"
-							value="${member.email}" />
+							value="${member.email}" required/>
 					</div>
 				</div>
 			</div>
@@ -137,7 +137,7 @@ body {
 					<div class="col-xs-8">
 						<input type="password" name="password" id="password"
 							placeholder="Enter Your Password" class="form-control"
-							value="${member.password}" />
+							value="${member.password}" required/>
 					</div>
 				</div>
 			</div>
@@ -165,7 +165,7 @@ body {
 					<div class="col-xs-8">
 						<input type="email" name="email" id="email"
 							placeholder="Enter Your Email" class="form-control"
-							value="${employee.email}" />
+							value="${employee.email}" required/>
 					</div>
 				</div>
 			</div>
@@ -182,7 +182,7 @@ body {
 					<div class="col-xs-8">
 						<input type="password" name="password" id="password"
 							placeholder="Enter Your Password" class="form-control"
-							value="${employee.password}" />
+							value="${employee.password}" required/>
 					</div>
 				</div>
 			</div>

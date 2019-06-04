@@ -124,7 +124,7 @@ ease-in-out, box-shadow 1.15s ease-in-out;
 </tr>
 </thead>
 <tbody>
-<sql:setDataSource var="con" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/fypdb" user="root" password="root" /> <!-- Connects to database -->
+<sql:setDataSource var="con" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/fypdbnew" user="root" password="root" /> <!-- Connects to database -->
 <sql:query dataSource="${con }" sql="select * from food_diary where diary_id in(select diary_diary_id from member_diary where member_memberid = ${sessionScope.id})" var="diaries" /> <!-- Select statement for class in selected database  -->
 
 

@@ -5,6 +5,7 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -35,6 +36,17 @@ public class Member {
 
 	public void setBooking(Set<ClassDetails> booking) {
 		this.booking = booking;
+	}
+	
+	@OneToMany(targetEntity=ExerciseDate.class, cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	private Set<ExerciseDate> exerciseDate = new HashSet<>();
+
+	public Set<ExerciseDate> getExerciseDate() {
+		return exerciseDate;
+	}
+
+	public void setExerciseDate(Set<ExerciseDate> exerciseDate) {
+		this.exerciseDate = exerciseDate;
 	}
 
 	@OneToMany

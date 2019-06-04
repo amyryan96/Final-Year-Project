@@ -169,7 +169,7 @@ body {
 					<div class="col-xs-8">
 						<input type="text" name="name" id="fname"
 							placeholder="Enter Your Name" class="form-control "
-							value="${member.name}" />
+							value="${member.name}" required/>
 					</div>
 				</div>
 			</div>
@@ -184,7 +184,7 @@ body {
 					<div class="col-xs-8">
 					<input type="email" name="email" id="email"
 							placeholder="Enter Your Email" class="form-control"
-							value="${member.email}" />
+							value="${member.email}" required/>
 					</div>
 				</div>
 			</div>
@@ -200,7 +200,7 @@ body {
 					&nbsp
 					<input type="phoneNum" name="phoneNum" id="phonenum"
 							placeholder="Enter Your Number" class="form-control"
-							value="${member.phoneNum}" />
+							value="${member.phoneNum}" required/>
 					</div>
 				</div>
 			</div>
@@ -215,7 +215,7 @@ body {
 					<div class="col-xs-8">
 						<input type="password" name="password" id="password"
 							placeholder="Enter Your Password" class="form-control"
-							value="${member.password}" />
+							value="${member.password}" required/>
 					</div>
 				</div>
 			</div>
@@ -262,7 +262,7 @@ body {
 					<div class="col-xs-8">
 						<input type="text" name="name" id="fname"
 							placeholder="Enter Your Name" class="form-control "
-							value="${employee.name}" />
+							value="${employee.name}" required/>
 					</div>
 				</div>
 			</div>
@@ -277,7 +277,7 @@ body {
 					<div class="col-xs-8">
 					<input type="email" name="email" id="email"
 							placeholder="Enter Your Email" class="form-control"
-							value="${employee.email}" />
+							value="${employee.email}" required/>
 					</div>
 				</div>
 			</div>
@@ -293,7 +293,7 @@ body {
 					&nbsp
 					<input type="phoneNum" name="phoneNum" id="phonenum"
 							placeholder="Enter Your Number" class="form-control"
-							value="${employee.phone}" />
+							value="${employee.phone}" required/>
 					</div>
 				</div>
 			</div>
@@ -308,7 +308,7 @@ body {
 					<div class="col-xs-8">
 						<input type="password" name="password" id="password"
 							placeholder="Enter Your Password" class="form-control"
-							value="${employee.password}" />
+							value="${employee.password}" required/>
 					</div>
 				</div>
 			</div>
