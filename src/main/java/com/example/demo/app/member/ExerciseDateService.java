@@ -18,5 +18,9 @@ public class ExerciseDateService {
 		return exerDateRep.findOne(Memberid);
 
 	}
+	
+	public ExerciseDate findByExerciseDate(String date) {
+		return exerDateRep.findByDate(date);
+	}
 
 }

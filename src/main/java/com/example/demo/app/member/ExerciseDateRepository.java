@@ -4,4 +4,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface ExerciseDateRepository extends CrudRepository<ExerciseDate, Integer>{
 
+	public ExerciseDate findByDate(String date);
 }

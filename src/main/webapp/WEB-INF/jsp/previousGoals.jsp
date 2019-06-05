@@ -96,34 +96,38 @@ body {
 
 </head>
 <body>
-<div role="navigation">
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="/success">Gym HomePage</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse"
-			data-target="#navbarColor03" aria-controls="navbarColor03"
-			aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+	<div role="navigation">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="/success">Gym HomePage</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarColor03" aria-controls="navbarColor03"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-		<div class="collapse navbar-collapse" id="navbarColor03">
+			<div class="collapse navbar-collapse" id="navbarColor03">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active"><a class="nav-link" href="/bookClass" style="font-size: 10px">
-					Book A Gym Class<span class="sr-only">(current)</span></a></li>
-					<li class="nav-item"><a class="nav-link" href="/foodDiary" style="font-size: 10px">
-					Log Your Food<span class="sr-only">(current)</span></a></li>
-					<li class="nav-item"><a class="nav-link" href="/payment" style="font-size: 10px">
-					Membership Renewal<span class="sr-only">(current)</span></a></li>
-					<li class="nav-item"><a class="nav-link" href="/progress" style="font-size: 10px">
-					Set your Weekly Goals<span class="sr-only">(current)</span></a></li>
-					<li class="nav-item"><a class="nav-link" href="/viewFoodLogs" style="font-size: 10px">
-					View Previous Food Logs<span class="sr-only">(current)</span></a></li>
-					<li class="nav-item"><a class="nav-link" href="/recipes" style="font-size: 10px">
-					Search Recipes<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item active"><a class="nav-link"
+						href="/bookClass" style="font-size: 10px"> Book A Gym Class<span
+							class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/foodDiary"
+						style="font-size: 10px"> Log Your Food<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/payment"
+						style="font-size: 10px"> Membership Renewal<span
+							class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/progress"
+						style="font-size: 10px"> Set your Weekly Goals<span
+							class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/viewFoodLogs"
+						style="font-size: 10px"> View Previous Food Logs<span
+							class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/recipes"
+						style="font-size: 10px"> Search Recipes<span class="sr-only">(current)</span></a></li>
 					<!-- <li class="nav-item"><a class="nav-link" href="/MyFirstSchedule"
 						style="font-size: 10px">Test<span
 							class="sr-only">(current)</span></a></li> -->
-					<li class="nav-item"><a class="nav-link" href="/prevGoals" style="font-size: 10px">
-					Previous Goals<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/prevGoals"
+						style="font-size: 10px"> Previous Goals<span class="sr-only">(current)</span></a></li>
 					<li class="nav-item">
 						<form class="form-horizontal" method="post" action="logoutMember">
 							<input type="submit" class="btn btn-outline-primary"
@@ -133,37 +137,58 @@ body {
 				</ul>
 
 			</div>
-	</nav>
-</div>
-<form class="form-horizontal" method="post" action="ViewGoals">
-	<input type="text" list="datesLog" placeholder="Choose Date" />
-	<sql:setDataSource var="con" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/fypdbnew" user="root" password="root" /> <!-- Connects to database -->
-	<sql:query dataSource="${con }" sql="select * from exercise_date"
-	 var="goals" /> <!-- Select statement for class in selected database  -->
-	
-	<%-- select * from exercise_date A inner join exercise_date_exercise B on 
-	A.goal_id = B.exercise_date_goal_id inner join exercise C on B.exercise_exercise_id = C.exercise_id inner 
-	join member_exercise D on C.exercise_id = D.exercise_exercise_id where D.member_memberid = ${sessionScope.id}"
-	 --%>
-	<datalist id="datesLog">
-		<c:forEach var="rows" items="${goals.rows}">
-			<input type="hidden" value="${rows.goal_is }" name="goalId" />
-			<option value="${rows.date }">
-		</c:forEach>
-	</datalist>
-	
-	<sql:query dataSource="${con }" sql="select * from exercise_date A inner join exercise_date_exercise B on 
-	A.goal_id = B.exercise_date_goal_id inner join exercise C on B.exercise_exercise_id = C.exercise_id inner 
-	join member_exercise D on C.exercise_id = D.exercise_goal_id where D.member_memberid = ${sessionScope.id}"
-	 var="goals2" />
-	 <c:forEach var="list" items="${goals2.rows }">
-	 	<input type="hidden" name="day" value="${list.day }" />
-	 	<input type="hidden" name="cardio" value="${list.cardio_time }" />
-	 	<input type="hidden" name="weights" value="${list.weight_time }" />
-	 	<input type="hidden" name="casual" value="${list.casw_time }" />
-	 </c:forEach>
-	<input type="submit" class="btn btn-outline-primary" value="View Previous Goal" />
-</form>
+		</nav>
+	</div>
+	<div class="container text-center">
+		<button type="button" class="btn btn-secondary" data-toggle="modal"
+			data-target="#myModal">Choose Date Range</button>
+	</div>
+	<form class="form-horizontal" method="post" action="ViewGoals">
+		<input disabled type="text" name="theDate" value="${sessionScope.chosenDate }" />
+		
+		<input type="submit" class="btn btn-outline-primary"
+			value="View Previous Goal" />
+	</form>
+
+	<div id="myModal" class="modal fade" role="dialog">
+		<br> <br> <br> <br>
+		<div class="modal-dialog">
+
+			<form class="form-horizontal" method="post" action="ChooseDate">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Choose Date</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<sql:setDataSource var="con" driver="com.mysql.jdbc.Driver"
+								url="jdbc:mysql://localhost:3306/fypdbnew" user="root"
+								password="root" />
+							<!-- Connects to database -->
+							<sql:query dataSource="${con }"
+								sql="select * from exercise_date A inner join member_exercise_date B on A.goal_id = B.exercise_date_goal_id inner join
+    							member C on B.member_memberid = C.memberid where memberid = ${sessionScope.id}"
+								var="goals" />
+							<input type="text" list="datesLog" placeholder="Choose Date"
+								name="date" autocomplete="off"/>
+							<datalist id="datesLog">
+								<c:forEach var="rows" items="${goals.rows}">
+									<input type="hidden" value="${rows.goal_is }" name="goalId" />
+									<option value="${rows.date }">
+								</c:forEach>
+							</datalist>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<div class="form-group container text-center">
+							<input type="submit" class="btn btn-secondary" value="Save" />
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
 
 </body>
 </html>

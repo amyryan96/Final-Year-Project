@@ -195,14 +195,23 @@ public class ApplicationController {
 	}
 	
 	@RequestMapping("/prevGoals")
-	public String prevGoals() {
+	public String prevGoals(HttpSession session) {
+		session.removeAttribute("chosenDate");
+		return "previousGoals";
+	}
+	
+	@RequestMapping("/ChooseDate")
+	public String ViewGoals(HttpServletRequest request, HttpSession session) {
+		
+		String goalDate = request.getParameter("date");
+	//	int goalId = Integer.parseInt(request.getParameter("goalId"));
+		ExerciseDate ed = exerDateSer.findByExerciseDate(goalDate);
+		session.setAttribute("chosenDate", goalDate);
 		return "previousGoals";
 	}
 	
 	@RequestMapping("/ViewGoals")
-	public String ViewGoals(HttpServletRequest request) {
-		//int goalId = Integer.parseInt(request.getParameter("goalId"));
-		//ExerciseDate ed = exerDateSer.getById(goalId);
+	public String ViewGoals() {
 		return "myGoals";
 	}
 
